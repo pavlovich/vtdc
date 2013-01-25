@@ -6,121 +6,9 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&UserProfile"><ht key="user_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&User"><ht key="user.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
-
-
-
-
-<!-- ====== UserProfile Pages ====== -->
-
-<def tag="index-page" for="UserProfile">
-  <page merge title="#{ht 'user_profile.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page user-profile" param/>
-
-    <content-header: param>
-      <h2 param="heading">
-        <ht key="user_profile.index.heading">
-          <model-name-human model="&model"/>
-        </ht>
-      </h2>
-
-      <p param="count" if>
-        <ht key="user_profile.collection.count" count="&collection_count">
-          <count summary/>
-        </ht>
-      </p>
-    </content-header:>
-
-    <content-body: param>
-      <a action="new" to="&model" param="new-link">
-        <ht key="user_profile.actions.new">New User profile</ht>
-      </a>
-
-      <page-nav param="top-page-nav"/>
-
-      <collection param/>
-
-      <page-nav param="bottom-page-nav"/>
-
-
-    </content-body:>
-  </page>
-</def>
-
-
-<def tag="new-page" for="UserProfile">
-  <page merge title="#{ht 'user_profile.new.title', :default=>[' New User profile'] }">
-    <body: class="new-page user-profile" param/>
-
-    <content-header: param>
-      <h2 param="heading">
-        <ht key="user_profile.new.heading">
-          New User profile
-        </ht>
-      </h2>
-    </content-header:>
-
-    <content-body: param>
-      <form param>
-        <submit: label="#{ht 'user_profile.actions.create', :default=>['Create User profile']}"/>
-      </form>
-    </content-body:>
-  </page>
-</def>
-
-
-<def tag="show-page" for="UserProfile">
-  <page merge title="#{ht 'user_profile.show.title', :default=>['User profile'], :name => name(:no_wrapper => true) }" without-aside >
-
-    <body: class="show-page user-profile" param/>
-
-    <content-header: param>
-      <h2 param="heading">
-        <ht key="user_profile.show.heading" name="#{name(:no_wrapper => true)}">
-          User profile <name/>
-        </ht>
-      </h2>
-
-      <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="user_profile.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit User profile
-        </ht>
-      </a>
-    </content-header:>
-
-    <content-body: param>
-      <field-list fields="bio, publish_date" param/>
-    </content-body:>
-
-  </page>
-</def>
-
-
-<def tag="edit-page" for="UserProfile">
-  <page merge title="#{ht 'user_profile.edit.title', :default=>['Edit User profile'], :name => name(:no_wrapper => true) }">
-
-    <body: class="edit-page user-profile" param/>
-
-    <content-header: param>
-      <h2 param="heading">
-        <ht key="user_profile.edit.heading" name="#{name(:no_wrapper => true)}">
-          Edit User profile
-        </ht>
-      </h2>
-      <delete-button label="#{ht 'user_profile.actions.delete', :default=>['Remove This User profile']}" param/>
-    </content-header:>
-
-    <content-body: param>
-      <form param/>
-    </content-body:>
-
-  </page>
-</def>
-
 
 
 
@@ -146,6 +34,9 @@
     </content-header:>
 
     <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="user.actions.new">New User</ht>
+      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -153,13 +44,6 @@
 
       <page-nav param="bottom-page-nav"/>
 
-
-      <div param="new-form">
-        <h3 param="new-form-heading">
-          <ht key="user.form.new.heading">New User</ht>
-        </h3>
-        <form with="&@invalid_record || new_for_current_user(User)" param/>
-      </div>
 
     </content-body:>
   </page>

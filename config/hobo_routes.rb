@@ -5,12 +5,37 @@
 Vtdc::Application.routes.draw do
 
 
+  # Resource routes for controller user_profiles
+  resources :user_profiles
 
-# These are the Hobo 1.3 style routes.   They've been included for backwards
-# compatibility reasons because the names of some named routes have been changed.
-# Please update your views to use the new named route names and then disable this
-# section by setting config.hobo.dont_emit_deprecated_routes = true.  blah blah
 
- 
- 
+  # Resource routes for controller users
+  resources :users, :only => [:edit, :show, :create, :update, :destroy] do
+    member do
+      get 'account'
+      put 'accept_invitation', :action => 'do_accept_invitation'
+      get 'accept_invitation'
+      put 'reset_password', :action => 'do_reset_password'
+      get 'reset_password'
+    end
+  end
+
+  # User routes for controller users
+  match 'login(.:format)' => 'users#login', :as => 'user_login'
+  get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
+  match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
+
+  namespace :admin do
+
+
+    # Resource routes for controller admin/users
+    resources :users do
+      collection do
+        post 'invite', :action => 'do_invite'
+        get 'invite'
+      end
+    end
+
+  end
+
 end

@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'Fog'
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
@@ -64,5 +66,20 @@ module Vtdc
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.paperclip_defaults = {
+        :path => "images/:class/:id/:attachment/:style/img_:fingerprint",
+        :storage => :fog,
+        :url => 'images.totaldoberman.com', #example: assets.blah.com
+        :fog_credentials => {
+            :provider=>'Google',
+            :google_storage_access_key_id=>'GOOG3Y2ZDDQCYASFB5DX',
+            :google_storage_secret_access_key=>'D3OYiJZv9Wnz3Oj9CqpEZ4rdAZai/KBPP1OSOcQ2'
+        },
+        :fog_public => true, #this must be set to true or ALL assets will be private by DEFAULT
+        :fog_host => 'http://images.totaldoberman.com', #example: http://assets.blah.com.commondatastorage.googleapis.com This can be changed to CDN
+        :fog_directory => 'images.totaldoberman.com' #example: assets.blah.com
+    }
+
   end
 end

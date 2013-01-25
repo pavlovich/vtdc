@@ -1,0 +1,7 @@
+<show-page>
+    <field-list: replace >
+    <%= image_tag @this.top_photo.url(:medium) %>
+    <field-list fields="bio, publish_date" class="form-horizontal" />
+    <%= image_tag @this.bottom_photo.url(:thumb) %>
+    </field-list:>
+</show-page>

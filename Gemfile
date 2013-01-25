@@ -5,8 +5,13 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+group :production do
+    gem 'pg'
+end
+group :development, :test do
+    gem 'sqlite3'
+    gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -45,5 +50,11 @@ gem "quiet_assets", :group => :development
 # Hobo's version of will_paginate is required.
 gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
 gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
-gem "hobo_bootstrap_ui", "2.0.0.pre8.e9a7730"
+# gem "hobo_bootstrap_ui", "2.0.0.pre8.e9a7730"
+gem "hobo_bootstrap_ui", :git => "git://github.com/Hobo/hobo_bootstrap_ui.git"
 gem "jquery-ui-themes", "~> 0.0.4"
+gem 'paperclip'
+#gem 'hobo_paperclip', "= 2.0.0.pre8.e9a7730"
+gem 'hobo_paperclip', :git => "git://github.com/Hobo/hobo_paperclip.git", :branch => "master"
+gem 'fog'
+

@@ -14,6 +14,10 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :key_timestamp
     end
     add_index :users, [:state]
+
+    xxx = User.create(:name => "Peter Pavlovich", :email_address => "pavlovich@gmail.com", :administrator => true, :password => "savannah", :password_confirmation => "savannah")
+    xxx.state = "active"
+    xxx.save
   end
 
   def self.down
