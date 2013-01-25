@@ -31,6 +31,32 @@ GIT
   specs:
     will_paginate (3.0.4.hobo)
 
+GIT
+  remote: https://github.com/Hobo/hobo.git
+  revision: 399abadd67630a38ba9e2953a616990b4f997444
+  specs:
+    dryml (2.0.0.pre8)
+      actionpack (~> 3.2.0)
+      hobo_support (= 2.0.0.pre8)
+    hobo (2.0.0.pre8)
+      dryml (= 2.0.0.pre8)
+      hobo_fields (= 2.0.0.pre8)
+      hobo_support (= 2.0.0.pre8)
+      will_paginate (~> 3.0.0)
+    hobo_fields (2.0.0.pre8)
+      hobo_support (= 2.0.0.pre8)
+    hobo_jquery (2.0.0.pre8)
+      hobo_rapid (= 2.0.0.pre8)
+      jquery-rails (~> 2.0)
+    hobo_jquery_ui (2.0.0.pre8)
+      hobo (= 2.0.0.pre8)
+      hobo_jquery (= 2.0.0.pre8)
+      jquery-ui-themes (~> 0.0.4)
+    hobo_rapid (2.0.0.pre8)
+      hobo (= 2.0.0.pre8)
+    hobo_support (2.0.0.pre8)
+      rails (~> 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,9 +102,6 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     daemons (1.1.9)
-    dryml (2.0.0.pre8.e9a7730)
-      actionpack (~> 3.2.0)
-      hobo_support (= 2.0.0.pre8.e9a7730)
     erubis (2.7.0)
     eventmachine (1.0.0)
     excon (0.16.10)
@@ -96,24 +119,6 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     hike (1.2.1)
-    hobo (2.0.0.pre8.e9a7730)
-      dryml (= 2.0.0.pre8.e9a7730)
-      hobo_fields (= 2.0.0.pre8.e9a7730)
-      hobo_support (= 2.0.0.pre8.e9a7730)
-      will_paginate (~> 3.0.0)
-    hobo_fields (2.0.0.pre8.e9a7730)
-      hobo_support (= 2.0.0.pre8.e9a7730)
-    hobo_jquery (2.0.0.pre8.e9a7730)
-      hobo_rapid (= 2.0.0.pre8.e9a7730)
-      jquery-rails (~> 2.0)
-    hobo_jquery_ui (2.0.0.pre8.e9a7730)
-      hobo (= 2.0.0.pre8.e9a7730)
-      hobo_jquery (= 2.0.0.pre8.e9a7730)
-      jquery-ui-themes (~> 0.0.4)
-    hobo_rapid (2.0.0.pre8.e9a7730)
-      hobo (= 2.0.0.pre8.e9a7730)
-    hobo_support (2.0.0.pre8.e9a7730)
-      rails (~> 3.2.0)
     httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
@@ -205,10 +210,10 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fog
-  hobo (= 2.0.0.pre8.e9a7730)
+  hobo!
   hobo_bootstrap!
   hobo_bootstrap_ui!
-  hobo_jquery_ui (= 2.0.0.pre8.e9a7730)
+  hobo_jquery_ui!
   hobo_paperclip!
   jquery-rails
   jquery-ui-themes (~> 0.0.4)

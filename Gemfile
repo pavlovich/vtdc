@@ -7,10 +7,13 @@ gem 'rails', '3.2.11'
 
 group :production do
     gem 'pg'
+
 end
 group :development, :test do
     gem 'sqlite3'
     gem 'thin'
+    # gem "hobo", "= 2.0.0.pre8.e9a7730"
+    # gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
 end
 
 # Gems used only for assets and not required
@@ -42,14 +45,16 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "hobo", "= 2.0.0.pre8.e9a7730"
+    gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
+    gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
+
 gem "hobo_bootstrap", :git => "git://github.com/Hobo/hobo_bootstrap.git"
 
 # Hobo has a lot of assets.   Stop cluttering the log in development mode.
 gem "quiet_assets", :group => :development
 # Hobo's version of will_paginate is required.
 gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
-gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
+
 # gem "hobo_bootstrap_ui", "2.0.0.pre8.e9a7730"
 gem "hobo_bootstrap_ui", :git => "git://github.com/Hobo/hobo_bootstrap_ui.git"
 gem "jquery-ui-themes", "~> 0.0.4"
