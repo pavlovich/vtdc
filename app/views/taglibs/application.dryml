@@ -47,6 +47,7 @@ you can place common code in this file. -->
       </div>
    </prepend-body>
    <app-name: replace />
+   <account-nav: replace />
    </old-page>
 
 </extend>

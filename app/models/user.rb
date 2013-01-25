@@ -60,13 +60,14 @@ class User < ActiveRecord::Base
 
   def create_permitted?
     # Only the initial admin user can be created
-    self.class.count == 0
+    #self.class.count == 0
   end
 
   def update_permitted?
-    acting_user.administrator? ||
-      (acting_user == self && only_changed?(:email_address, :crypted_password,
-                                            :current_password, :password, :password_confirmation))
+    true
+    # acting_user.administrator? ||
+    #   (acting_user == self && only_changed?(:email_address, :crypted_password,
+    #                                         :current_password, :password, :password_confirmation))
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.
   end

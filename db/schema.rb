@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119020018) do
+ActiveRecord::Schema.define(:version => 20130125161200) do
 
   create_table "profilesubls", :force => true do |t|
     t.datetime "created_at"
