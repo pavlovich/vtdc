@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+gem 'thin'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,7 +13,6 @@ group :production do
 end
 group :development, :test do
     gem 'sqlite3'
-    gem 'thin'
     # gem "hobo", "= 2.0.0.pre8.e9a7730"
     # gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
 end
