@@ -32,20 +32,13 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="daemons (v1.1.9, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="dryml (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.0.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v1.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_bootstrap (v@e00a8a, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_bootstrap_ui (v@e73a58, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo_fields (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo_jquery (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo_jquery_ui (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_paperclip (v0.0.4@58e0da, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo_rapid (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hobo_support (v2.0.0.pre8.e9a7730, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httparty (v0.10.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="journey (v1.0.4, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
