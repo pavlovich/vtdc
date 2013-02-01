@@ -28,7 +28,7 @@ you can place common code in this file. -->
 
    <prepend-body:>
       <div class="app-header">
-         <div class="app-name-2"><div id="logo"><image src="VTDCLogo2.png"/></div><div id="name">Vermont Total <br/>Doberman Club</div>
+         <div class="app-name-2"><div id="logo"><image src="VTDCLogo2.png"/></div><div id="name">Vermont Total Doberman Club</div>
             <!-- div id="right-header">
                <div id="my-search">
                   <live-search />

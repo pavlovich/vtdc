@@ -32,13 +32,23 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="daemons (v1.1.9, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dryml (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.0.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="excon (v0.16.10, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v1.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog (v1.9.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="formatador (v0.2.4, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_bootstrap (v@e00a8a, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_bootstrap_ui (v@e73a58, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo_fields (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo_jquery (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo_jquery_ui (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hobo_paperclip (v0.0.4@58e0da, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo_rapid (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hobo_support (v@399aba, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httparty (v0.10.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="journey (v1.0.4, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
@@ -49,7 +59,11 @@
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.19, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.5.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.5.2, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-scp (v1.0.4, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-ssh (v2.6.3, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.6, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="paperclip (v3.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v0.14.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.3, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="quiet_assets (v1.0.1, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.4, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
@@ -60,6 +74,7 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v3.2.11, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.0.3, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.12, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-hmac (v0.4.0, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.5, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.6, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.2, RVM: ruby-1.9.2-p320 [vtdc]) [gem]" level="application" />

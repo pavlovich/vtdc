@@ -25,6 +25,10 @@ class UserProfile < ActiveRecord::Base
     return [:bio, :publish_date, :top_photo, :bottom_photo]
   end
 
+  def bio=(a_string)
+    @bio = a_string
+  end
+
   # --- Permissions --- #
 
   def create_permitted?
