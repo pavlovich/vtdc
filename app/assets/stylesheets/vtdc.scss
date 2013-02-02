@@ -82,7 +82,9 @@ body {
 
 .bootstrap-content {
   margin-top: 4px;
-  background: white;
+  background: whitesmoke;
+  //border: 1px solid #D3CCCC;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 }
 
 .main-content > .header {
@@ -114,7 +116,7 @@ body {
   }
 
   .nav > li > a{
-    color: white;
+    color: whitesmoke;
     text-shadow: green 0.1em 0.1em 0.2em;
 
   }
@@ -125,7 +127,7 @@ body {
 
   .navbar-inner {
     background: none;
-    color: white;
+    color: whitesmoke;
     width: auto;
     //border: 1px solid #D4D4D4;
     //border-radius: 4px 4px 4px 4px;

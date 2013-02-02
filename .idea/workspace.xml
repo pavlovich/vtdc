@@ -33,10 +33,10 @@
       <file leaf-file-name="vtdc.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="22" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.55163044">
+            <state line="85" column="4" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.22394367">
               <folding>
-                <element signature="e#1935#2352#0" expanded="false" />
-                <element signature="e#2354#2540#0" expanded="false" />
+                <element signature="e#249#1528#0" expanded="false" />
+                <element signature="e#2443#2629#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1015,10 +1015,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="22" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.55163044">
+        <state line="85" column="4" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.22394367">
           <folding>
-            <element signature="e#1935#2352#0" expanded="false" />
-            <element signature="e#2354#2540#0" expanded="false" />
+            <element signature="e#249#1528#0" expanded="false" />
+            <element signature="e#2443#2629#0" expanded="false" />
           </folding>
         </state>
       </provider>
