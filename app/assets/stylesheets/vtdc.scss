@@ -33,7 +33,7 @@ body {
     #logo {
       float: left;
       margin-top: 5px;
-      margin-left: 15px;
+      //margin-left: 15px;
 
       img {
         float: right;
@@ -80,6 +80,24 @@ body {
   }
 }
 
+.bootstrap-content {
+  margin-top: 4px;
+  background: white;
+}
+
+.main-content > .header {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.form-actions, .form-horizontal .actions {
+ // background-color: whitesmoke;
+ // border-top: 1px solid #E5E5E5;
+  margin-bottom: 0px;
+ // margin-top: 20px;
+ // padding: 19px 20px 20px;
+}
+
 #user-changer {
   float: right;
   margin: 0px;
@@ -121,6 +139,16 @@ body {
   @include container-fixed();
   @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
   min-height: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+form {
+  margin-bottom: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
 }
 
 // Front page elements

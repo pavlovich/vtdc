@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="322acb9d-ceda-4c46-a23b-bfa0b1c4fc8a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/admin.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/admin.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/front.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/front.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/taglibs/application.dryml" afterPath="$PROJECT_DIR$/app/views/taglibs/application.dryml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss" />
     </list>
     <ignored path="vtdc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +33,10 @@
       <file leaf-file-name="vtdc.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="25" selection-start="916" selection-end="916" vertical-scroll-proportion="0.5095109">
+            <state line="89" column="22" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.55163044">
               <folding>
-                <element signature="e#1528#1605#0" expanded="false" />
-                <element signature="e#1607#2024#0" expanded="false" />
+                <element signature="e#1935#2352#0" expanded="false" />
+                <element signature="e#2354#2540#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1019,10 +1015,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="25" selection-start="916" selection-end="916" vertical-scroll-proportion="0.5095109">
+        <state line="89" column="22" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.55163044">
           <folding>
-            <element signature="e#1528#1605#0" expanded="false" />
-            <element signature="e#1607#2024#0" expanded="false" />
+            <element signature="e#1935#2352#0" expanded="false" />
+            <element signature="e#2354#2540#0" expanded="false" />
           </folding>
         </state>
       </provider>
