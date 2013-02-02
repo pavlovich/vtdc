@@ -1,0 +1,132 @@
+/*
+*= require bootstrap
+*/
+
+@import "bootstrap";
+
+body {
+	background: url("vtdc_background_main.jpg") repeat-x;
+	//width: 793px;
+}
+
+#content {
+//	margin: 0 auto;
+	//background: #98B74C;
+	//background: white;
+//	width: 793px;
+//	text-align: left;
+}
+
+.app-header {
+  @include container-fixed();
+  @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
+	//height: 162px;
+
+
+  .app-name-2 {
+      //background: bottom center url("header.jpg") scroll no-repeat transparent;
+      height: auto;
+      width: auto;
+      float: left;
+      text-align: right;
+
+    #logo {
+      float: left;
+      margin-top: 5px;
+      margin-left: 15px;
+
+      img {
+        float: right;
+        height: 100px;
+      }
+
+    }
+
+    #name {
+      font: 13px Arial, Helvetica, sans-serif;
+      float: left;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      font-style: italic;
+      color: #5C722A;
+      coxlor: green;
+      text-shadow: black 0.08em 0.08em 0.1em;
+      margin-top: 12px;
+      margin-left: 0px;
+      padding: 0px;
+
+      #name1 {
+        float: left;
+        clear: both;
+        font-size: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+      }
+      #name2 {
+        float: left;
+        clear: both;
+        font-size: 13px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+      }
+    }
+  }
+}
+
+#user-changer {
+  float: right;
+  margin: 0px;
+  .nav{
+    margin: 0px;
+  }
+}
+
+#right-header {
+  float: right;
+
+  #my-account-nav {
+    width: auto;
+  }
+
+  .nav > li > a{
+    color: white;
+    text-shadow: green 0.1em 0.1em 0.2em;
+
+  }
+
+  .navbar {
+    margin-bottom: 0px;
+  }
+
+  .navbar-inner {
+    background: none;
+    color: white;
+    width: auto;
+    //border: 1px solid #D4D4D4;
+    //border-radius: 4px 4px 4px 4px;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+  }
+
+}
+
+.navbar-inner {
+  @include container-fixed();
+  @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  min-height: 0px;
+}
+
+// Front page elements
+
+.club-logo {
+  text-align: center;
+}
+
+

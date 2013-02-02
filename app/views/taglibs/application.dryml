@@ -1,53 +1,70 @@
-<!-- this file is included by front_site.dryml, admin_site.dryml et al, so
-you can place common code in this file. -->
+<!-- this file is included by front_site.dryml, admin_site.dryml et al, so you can place common code in this file. -->
 
 <def tag='vtdc-account-nav'>
   <div class='vtdc-account-nav nav-collapse collapse'>
-  <do with='&current_user'>
-    <ul class='navigation account-nav nav pull-right' param>
-        <if test='&logged_in?'>
-        <li class='nav-item' param='logged-in-as'><a to='&current_user'><t name='&name' key='hobo.actions.logged_in_as'>Logged in as <name/></t></a></li>
-        <li class='nav-item' param='account'><a action='account'><t key='hobo.actions.account'>Account</t></a></li>
-        <li class='nav-item' param='log-out'><a href='&logout_url'><t key='hobo.actions.logout'>Log out</t></a></li>
-      </if>
-      <else>
-        <li class='nav-item' param='log-in'><a href='&login_url'><t key='hobo.actions.login'>Log in</t></a></li>
-        <li class='nav-item' param='sign-up' if='&signup_url'><a href='&signup_url'><t key='hobo.actions.signup'>Sign up</t></a></li>
-      </else>
-    </ul>
-  </do>
+      <do with='&current_user'>
+        <ul class='navigation account-nav nav pull-right' param>
+          <li param='search'><live-search param if='&defined_route? :site_search'/></li>
+
+          <if test='&logged_in?'>
+            <li class='nav-item' param='logged-in-as'><a to='&current_user'><t name='&name' key='hobo.actions.logged_in_as'>Logged in as <name/></t></a></li>
+            <li class='nav-item' param='account'><a action='account'><t key='hobo.actions.account'>Account</t></a></li>
+            <li class='nav-item' param='log-out'><a href='&logout_url'><t key='hobo.actions.logout'>Log out</t></a></li>
+          </if>
+          <else>
+            <li class='nav-item' param='log-in'><a href='&login_url'><t key='hobo.actions.login'>Log in</t></a></li>
+            <li class='nav-item' param='sign-up' if='&signup_url'><a href='&signup_url'><t key='hobo.actions.signup'>Sign up</t></a></li>
+          </else>
+        </ul>
+      </do>
   </div>
 </def>
 
+<def tag='vtdc-dev-user-changer'>
+  <do with='&current_user'>
+    <ul class='navigation account-nav nav pull-right' param>
+      <li param='dev-user-changer' if='&Rails.env.development?'><dev-user-changer/></li>
+    </ul>
+  </do>
+</def>
+
 <extend tag="page">
-	<old-page merge>
+    <old-page merge>
 
-   <custom-scripts: replace>
-		<stylesheet name="vtdc"/>
-   </custom-scripts:>
+        <custom-scripts: replace>
+            <stylesheet name="vtdc"/>
+        </custom-scripts:>
 
-   <prepend-body:>
-      <div class="app-header">
-         <div class="app-name-2"><div id="logo"><image src="VTDCLogo2.png"/></div><div id="name">Vermont Total Doberman Club</div>
-            <!-- div id="right-header">
-               <div id="my-search">
-                  <live-search />
-               </div>
-               <div id="my-account-nav" class="navbar">
-                  <div class="navbar-inner">
-                     <div class="header container">
-                        <div class="navbar">
-                           <vtdc-account-nav />
+        <prepend-body:>
+            <div class="app-header container">
+                <div class="app-name-2">
+                    <div id="logo">
+                        <image src="VTDCLogo2.png"/>
+                    </div>
+                    <div id="name">
+                        <div id="name1">VTDC</div>
+                        <div id="name2">Vermont Total<br/>Doberman Club</div>
+                    </div>
+                </div>
+                <div id="right-header">
+                    <div id="my-account-nav" class="navbar">
+                        <div class="navbar-inner">
+                            <div class="header container">
+                                <div class="navbar">
+                                    <vtdc-account-nav />
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-            </div -->
-         </div>
-      </div>
-   </prepend-body>
-   <app-name: replace />
-   </old-page>
+                    </div>
+                    <div id='user-changer'>
+                        <vtdc-dev-user-changer />
+                    </div>
+                </div>
+            </div>
+        </prepend-body>
+        <app-name: replace />
+        <account-nav: replace />
+    </old-page>
 
 </extend>
 
