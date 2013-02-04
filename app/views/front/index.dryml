@@ -49,7 +49,7 @@
           });
         </script>
         <div class="news span4">
-        <h1>Headline News</h1>
+        <h1>The Latest</h1>
         <ul>
             <li>
                 <span class="news-item-title">News Item 1</span>

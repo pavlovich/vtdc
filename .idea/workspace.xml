@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="322acb9d-ceda-4c46-a23b-bfa0b1c4fc8a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/index.dryml" afterPath="$PROJECT_DIR$/app/views/front/index.dryml" />
     </list>
     <ignored path="vtdc.iws" />
@@ -63,7 +62,7 @@
       <file leaf-file-name="index.dryml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/index.dryml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="48" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.68456376">
+            <state line="51" column="22" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.5637584">
               <folding />
             </state>
           </provider>
@@ -1522,7 +1521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/index.dryml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="48" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.68456376">
+        <state line="51" column="22" selection-start="1993" selection-end="1993" vertical-scroll-proportion="0.5637584">
           <folding />
         </state>
       </provider>
