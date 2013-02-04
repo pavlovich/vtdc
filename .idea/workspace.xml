@@ -26,7 +26,7 @@
       <file leaf-file-name="vtdc.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="14" selection-start="3349" selection-end="3349" vertical-scroll-proportion="0.86147755">
+            <state line="201" column="21" selection-start="3374" selection-end="3374" vertical-scroll-proportion="0.6728232">
               <folding>
                 <element signature="e#2734#2920#0" expanded="false" />
               </folding>
@@ -64,7 +64,7 @@
       <file leaf-file-name="index.dryml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front/index.dryml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="34" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+            <state line="62" column="74" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1491,13 +1491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1512,16 +1505,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/index.dryml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="34" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
+        <state line="62" column="74" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/vtdc.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="14" selection-start="3349" selection-end="3349" vertical-scroll-proportion="0.86147755">
+        <state line="201" column="21" selection-start="3374" selection-end="3374" vertical-scroll-proportion="0.6728232">
           <folding>
             <element signature="e#2734#2920#0" expanded="false" />
           </folding>
