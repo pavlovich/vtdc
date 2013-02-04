@@ -85,6 +85,23 @@ body {
   background: whitesmoke;
   //border: 1px solid #D3CCCC;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+
+  input[type="file"] {
+    line-height: auto;
+    height: auto;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  .paperclip--attachment,
+  textarea {
+    width: 600px; // plus 12px padding and 2px border
+  }
+
+  textarea {
+    height: 200px;
+  }
+
 }
 
 .main-content > .header {
@@ -157,6 +174,44 @@ form {
 
 .club-logo {
   text-align: center;
+}
+
+.carousel {
+  margin-left: 0px;
+}
+
+.carousel-inner > .item > img {
+  display: block;
+  line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.news {
+  height: auto;
+  ul, li {
+    list-style: none;
+    margin-top: 10px;
+  }
+  li {
+    border-bottom: 1px solid #a9a9a9;
+
+  }
+  .news-item-title, .news-item-body {
+    display: inline-block;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 20px;
+    list-style: none;
+  }
+  .news-item-body {
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+  }
 }
 
 
