@@ -190,6 +190,19 @@ form {
   width: 100%;
 }
 
+.carousel-caption {
+  position:relative;
+  background: transparent;
+  clear: both;
+  float: left;
+  text-align: center;
+  width: 100%;
+
+  p {
+    color: black;
+  }
+}
+
 .news {
   height: auto;
   ul, li {
@@ -201,16 +214,18 @@ form {
 
   }
   .news-item-title, .news-item-body {
-    display: inline-block;
+    //display: inline-block;
     font-weight: bolder;
     font-style: italic;
     font-size: 20px;
     list-style: none;
+    font-weight: bolder;
   }
   .news-item-body {
-    display: inline-block;
+    //display: inline-block;
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
     padding-bottom: 10px;
     list-style: none;
   }
