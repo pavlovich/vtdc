@@ -20,6 +20,7 @@ body {
 .app-header {
   @include container-fixed();
   @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  margin-bottom: 5px;
 	//height: 162px;
 
 
@@ -37,7 +38,7 @@ body {
 
       img {
         float: right;
-        height: 100px;
+        height: 130px;
       }
 
     }
@@ -59,7 +60,7 @@ body {
       #name1 {
         float: left;
         clear: both;
-        font-size: 40px;
+        font-size: 50px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0px;
@@ -69,7 +70,7 @@ body {
       #name2 {
         float: left;
         clear: both;
-        font-size: 13px;
+        font-size: 16px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0px;
@@ -127,6 +128,7 @@ body {
 
 #right-header {
   float: right;
+  margin-top: 15px;
 
   #my-account-nav {
     width: auto;
