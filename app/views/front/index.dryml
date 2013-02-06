@@ -9,7 +9,7 @@
 
 <!--  Carousel - consult the Twitter Bootstrap docs at
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
-<div id="this-carousel-id" class="span8 carousel slide"><!-- class of slide for animation -->
+<div id="myCarousel" class="span8 carousel slide" data-interval="6000" data-pause="Pausing ..."><!-- class of slide for animation -->
   <div class="carousel-inner">
     <div class="item active"><!-- class of active since it's the first item -->
       <img src="http://www.k9stud.com/images/mitch%20holden/mitch%20holden_doberman-pinscher-a20124140572.jpg" alt="" />
@@ -40,12 +40,33 @@
         href values must reference the id for this carousel -->
     <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-</div><!-- /.carousel -->
+</div>
+	<div class="carousel-navbar">
+        <div class="carousel-nav current" > 1 </div>
+        <div class="carousel-nav"> 2 </div>
+        <div class="carousel-nav"> 3 </div>
+        <div class="carousel-nav"> 4 </div>
+    </div>
+<!-- /.carousel -->
         <script>
-          $(document).ready(function(){
-            $('.carousel').carousel({
-                                    interval: 6000
-                                    });
+          $(document).ready(
+          function(){
+            $('.carousel').carousel();
+
+            $('#myCarousel').bind('slid', function(e){ //This event is fired when the carousel has completed its slide transition.
+
+                index = $('#myCarousel .item').index($('#myCarousel .carousel-inner .active')); // find the index of current slide
+                $('.carousel-navbar .current').removeClass('current'); // reset the navigation
+                $('.carousel-nav').eq(index).addClass('current'); // update the navigation
+            });
+
+            $('.carousel-nav').bind('click', function(e){
+                $('.carousel-navbar .current').removeClass('current'); // reset the navigation
+                index = $('.carousel-nav').index(this); // find the clicked slide navigation
+                $('#myCarousel').carousel(index); // navigate to the selected slider
+                $(this).addClass('current'); // mark selected to the clicked navigation
+            });
+
           });
         </script>
         <div class="news span4">

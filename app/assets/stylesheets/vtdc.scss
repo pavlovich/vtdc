@@ -233,4 +233,43 @@ form {
   }
 }
 
+.carousel {
+  .item {
+    transition: .7s ease-in-out opacity;
+    -moz-transition: .7s ease-in-out opacity;
+    -ms-transition: .7s ease-in-out opacity;
+    -o-transition: .7s ease-in-out opacity;
+    -webkit-transition: .7s ease-in-out opacity;
+    left: 0 !important;
+  }
 
+  .next.left, .prev.right {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .active.left, .active.right {
+    opacity: 0;
+    z-index: 2;
+  }
+
+}
+
+.carousel-navbar {
+  text-align:center;
+}
+
+.carousel-nav {
+  border: 1px solid #ccc;
+  display:inline-block;
+  padding: 5px 10px;
+  color:black;
+}
+
+.carousel-nav:hover{
+  border:1px solid #777;
+}
+
+.carousel-nav.current {
+  background-color:#ccc;
+}

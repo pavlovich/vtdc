@@ -7,4 +7,9 @@ end
 #<%= image_tag absolute_attachment_url(attachment_name, :attachment_style)}" %>
 #  Ex: Model = Person (@person), attachment_name = avatar, style = :thumb
 #  <%= image_tag absolute_attachment_url(@person.avatar, :thumb)}" %>
+
+  def linkable_models
+    (Hobo::Model.all_models.sort_by &:name).select { |m| linkable?(m, :index) }
+  end
+
 end
