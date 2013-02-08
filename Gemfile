@@ -64,3 +64,5 @@ gem 'paperclip'
 gem 'hobo_paperclip', :git => "git://github.com/Hobo/hobo_paperclip.git", :branch => "master"
 gem 'fog'
 
+gem 'friendly_id'
+

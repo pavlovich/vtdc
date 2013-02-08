@@ -6,7 +6,7 @@ Vtdc::Application.routes.draw do
 
 
   # Resource routes for controller user_profiles
-  resources :user_profiles
+  resources :user_profiles, :only => [:index, :show, :update, :destroy]
 
 
   # Resource routes for controller users
@@ -26,6 +26,14 @@ Vtdc::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
   namespace :admin do
+
+
+    # Resource routes for controller admin/custom_pages
+    resources :custom_pages
+
+
+    # Resource routes for controller admin/user_profiles
+    resources :user_profiles
 
 
     # Resource routes for controller admin/users

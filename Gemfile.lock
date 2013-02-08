@@ -118,6 +118,7 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.4)
+    friendly_id (4.0.9)
     hike (1.2.1)
     httparty (0.10.0)
       multi_json (~> 1.0)
@@ -210,6 +211,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fog
+  friendly_id
   hobo!
   hobo_bootstrap!
   hobo_bootstrap_ui!

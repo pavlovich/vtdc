@@ -23,4 +23,14 @@
   </old-card>
 </extend>
 
+<extend tag="card" for="UserProfile">
+  <old-card merge>
+    <default: replace>
+    <div class="users">
+     xxxx
+    </div>
+    </default:>
+  </old-card>
+</extend>
+
 <include gem='hobo_paperclip'/>

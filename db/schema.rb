@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125161200) do
+ActiveRecord::Schema.define(:version => 20130207015809) do
+
+  create_table "custom_pages", :force => true do |t|
+    t.string   "menu_title"
+    t.string   "title"
+    t.string   "description"
+    t.text     "contents"
+    t.boolean  "display_children_on_side_menu"
+    t.boolean  "display_children_as_dropdown_menu"
+    t.boolean  "visible_to_public"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profilesubls", :force => true do |t|
     t.datetime "created_at"
