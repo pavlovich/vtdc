@@ -273,3 +273,12 @@ form {
 .carousel-nav.current {
   background-color:#ccc;
 }
+
+.custom-page {
+  .main-row{
+    padding-bottom: 20px;
+    .content-body {
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<page aside-location="left">
+<aside: >
+<ul>
+<li>
+test 1
+</li>
+<li>
+test 2
+</li>
+</ul>
+</aside:>
+<content-header:>
+<%= raw @custom_page.title %>
+</content-header:>
+<content-body:>
+<%= raw @custom_page.contents %>
+</content-body:>
+</page>

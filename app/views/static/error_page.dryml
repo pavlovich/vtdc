@@ -1,0 +1,8 @@
+<page>
+  <content-header:>
+    Error: :You are not authorized to access that resource.
+  </content-header:>
+  <content-body:>
+    Please contact the site administrator if you have reached this message unexpectedly.
+  </content-body:>
+</page>

@@ -82,7 +82,6 @@
   <old-card merge>
     <default: replace>
     <div class="users">
-     xxxx
     </div>
     </default:>
   </old-card>
@@ -105,3 +104,6 @@
         <% end -%>
   </navigation>
 </def> -->
+
+<def tag="delete-button" attrs="label, in-place, image, confirm, fade, subsite">
+</def>

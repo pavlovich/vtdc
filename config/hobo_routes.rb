@@ -5,6 +5,10 @@
 Vtdc::Application.routes.draw do
 
 
+  # Resource routes for controller custom_pages
+  resources :custom_pages, :only => [:edit, :show, :update, :destroy]
+
+
   # Resource routes for controller user_profiles
   resources :user_profiles, :only => [:index, :show, :update, :destroy]
 

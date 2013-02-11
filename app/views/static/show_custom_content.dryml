@@ -1,0 +1,8 @@
+<page class="custom-page">
+<content-header:>
+<h2><%= raw @custom_page.title %></h2>
+</content-header:>
+<content-body:>
+<%= raw @custom_page.contents %>
+</content-body:>
+</page>

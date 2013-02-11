@@ -15,9 +15,14 @@ class CustomPage < ActiveRecord::Base
     slug                              :string
     timestamps
   end
+
   attr_accessible :menu_title, :title, :description, :contents, :display_children_on_side_menu, :display_children_as_dropdown_menu, :visible_to_public
 
   friendly_id :menu_title, use: :slugged
+
+  def child_pages
+    nil
+  end
 
   # --- Permissions --- #
 

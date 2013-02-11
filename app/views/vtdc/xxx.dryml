@@ -1,8 +1,0 @@
-<page>
-<content-header:>
-<%= raw @static_page.title %>
-</content-header:>
-<content-body:>
-<%= raw @static_page.contents %>
-</content-body:>
-</page>
