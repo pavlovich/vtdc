@@ -65,4 +65,27 @@ Vtdc::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  ActionMailer::Base.smtp_settings = {
+      :address        => 'smtp.sendgrid.net',
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => 'heroku.com'
+  }
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => "totaldoberman",
+      :password => "Kqd2c%4Tzvg%Mu",
+      :domain => "totaldoberman.com",
+      :address => "smtp.sendgrid.net",
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
+  ActionMailer::Base.delivery_method ||= :smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+
 end

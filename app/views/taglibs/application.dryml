@@ -104,6 +104,3 @@
         <% end -%>
   </navigation>
 </def> -->
-
-<def tag="delete-button" attrs="label, in-place, image, confirm, fade, subsite">
-</def>
