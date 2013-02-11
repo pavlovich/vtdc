@@ -282,3 +282,18 @@ form {
     }
   }
 }
+
+.login-page #login {
+  width: 206px;
+}
+
+.forgot-password-page {
+  .content {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    th {
+      padding-right: 5px;
+    }
+  }
+}
