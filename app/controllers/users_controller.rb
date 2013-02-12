@@ -17,11 +17,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def do_accept_invitation
+  def accept_invitation
     do_transition_action :accept_invitation do
       if this.valid?
         self.current_user = this
         flash[:notice] = t("hobo.messages.you_signed_up", :default=>"You have signed up")
+        redirect_to home_page
       end
     end
   end
