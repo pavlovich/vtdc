@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     administrator :boolean, :default => false
     timestamps
   end
-  attr_accessible :name, :email_address, :password, :password_confirmation, :state, :administrator
+  attr_accessible :name, :email_address, :password, :password_confirmation
 
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
