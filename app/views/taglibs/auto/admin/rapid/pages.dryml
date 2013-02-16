@@ -96,7 +96,7 @@
 
     <content-body: param>
       <view:description param="description" />
-      <field-list fields="menu_title, contents, slug" param/>
+      <field-list fields="menu_title, contents, slug, parent_page" param/>
     </content-body:>
 
   </page>

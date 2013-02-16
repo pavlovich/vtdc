@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207015809) do
+ActiveRecord::Schema.define(:version => 20130216020440) do
 
   create_table "custom_pages", :force => true do |t|
     t.string   "menu_title"
@@ -24,40 +24,43 @@ ActiveRecord::Schema.define(:version => 20130207015809) do
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_page_id"
   end
 
+  add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"
+
   create_table "profilesubls", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "user_profiles", :force => true do |t|
-    t.text     "bio"
-    t.date     "publish_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "top_photo_file_name"
-    t.string   "top_photo_content_type"
-    t.integer  "top_photo_file_size"
-    t.datetime "top_photo_updated_at"
-    t.string   "bottom_photo_file_name"
-    t.string   "bottom_photo_content_type"
-    t.integer  "bottom_photo_file_size"
-    t.datetime "bottom_photo_updated_at"
+    t.text      "bio"
+    t.date      "publish_date"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "top_photo_file_name"
+    t.string    "top_photo_content_type"
+    t.integer   "top_photo_file_size"
+    t.timestamp "top_photo_updated_at"
+    t.string    "bottom_photo_file_name"
+    t.string    "bottom_photo_content_type"
+    t.integer   "bottom_photo_file_size"
+    t.timestamp "bottom_photo_updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.string   "remember_token"
-    t.datetime "remember_token_expires_at"
-    t.string   "name"
-    t.string   "email_address"
-    t.boolean  "administrator",                           :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "state",                                   :default => "invited"
-    t.datetime "key_timestamp"
+    t.string    "crypted_password",          :limit => 40
+    t.string    "salt",                      :limit => 40
+    t.string    "remember_token"
+    t.timestamp "remember_token_expires_at"
+    t.string    "name"
+    t.string    "email_address"
+    t.boolean   "administrator",                           :default => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "state",                                   :default => "invited"
+    t.timestamp "key_timestamp"
   end
 
   add_index "users", ["state"], :name => "index_users_on_state"

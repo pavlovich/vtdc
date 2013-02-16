@@ -104,3 +104,28 @@
         <% end -%>
   </navigation>
 </def> -->
+
+<def tag="custom-page-aside">
+  <ul>
+    <li>
+      test 1
+    </li>
+    <li>
+      test 2
+    </li>
+  </ul>
+</def>
+
+<def tag="custom-page-top-menu">
+<div class="navbar">
+<div class="navbar-inner">
+
+<ul class="nav">
+    <repeat with="&@custom_page.child_pages">
+    <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+    </repeat>
+</ul>
+</div>
+</div>
+
+</def>

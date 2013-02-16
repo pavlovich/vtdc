@@ -49,7 +49,8 @@ gem 'jquery-rails'
     gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
     gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
 
-gem "hobo_bootstrap", :git => "git://github.com/Hobo/hobo_bootstrap.git"
+#gem "hobo_bootstrap", :git => "git://github.com/Hobo/hobo_bootstrap.git"
+gem "hobo_bootstrap", :path => "/Users/pavlovich/projects/opensource/hobo_bootstrap"
 
 # Hobo has a lot of assets.   Stop cluttering the log in development mode.
 gem "quiet_assets", :group => :development

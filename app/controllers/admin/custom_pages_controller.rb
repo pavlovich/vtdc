@@ -1,4 +1,4 @@
-class Admin::CustomPagesController < ApplicationController
+class Admin::CustomPagesController < Admin::AdminSiteController
 
   hobo_model_controller
 

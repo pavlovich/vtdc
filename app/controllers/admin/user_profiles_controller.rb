@@ -1,4 +1,4 @@
-class Admin::UserProfilesController < ApplicationController
+class Admin::UserProfilesController < Admin::AdminSiteController
 
   hobo_model_controller
 

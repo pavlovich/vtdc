@@ -1,18 +1,8 @@
 GIT
-  remote: git://github.com/Hobo/hobo_bootstrap.git
-  revision: e00a8a3d0c1a73283ece4df8225dad1b50b5aef8
-  specs:
-    hobo_bootstrap (2.0.0.pre8)
-      bootstrap-sass (~> 2.1)
-      hobo (~> 2.0.0.pre6)
-      hobo_jquery (~> 2.0.0.pre6)
-      will_paginate-bootstrap (~> 0.2.1)
-
-GIT
   remote: git://github.com/Hobo/hobo_bootstrap_ui.git
-  revision: e73a58727b186f0bd674e1ff84470716862ad70c
+  revision: 810ef5fd76e7a0b8135660011784896578a65fb3
   specs:
-    hobo_bootstrap_ui (2.0.0.pre7)
+    hobo_bootstrap_ui (2.0.0.pre8)
       bootstrap-datepicker-rails
       hobo_bootstrap (~> 2.0.0.pre1)
 
@@ -33,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/Hobo/hobo.git
-  revision: 399abadd67630a38ba9e2953a616990b4f997444
+  revision: ccc6f87b906816b4967f42764fe0db88fdcf0815
   specs:
     dryml (2.0.0.pre8)
       actionpack (~> 3.2.0)
@@ -56,6 +46,15 @@ GIT
       hobo (= 2.0.0.pre8)
     hobo_support (2.0.0.pre8)
       rails (~> 3.2.0)
+
+PATH
+  remote: /Users/pavlovich/projects/opensource/hobo_bootstrap
+  specs:
+    hobo_bootstrap (2.0.0.pre8)
+      bootstrap-sass (~> 2.1)
+      hobo (~> 2.0.0.pre6)
+      hobo_jquery (~> 2.0.0.pre6)
+      will_paginate-bootstrap (~> 0.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -88,9 +87,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bootstrap-datepicker-rails (0.6.37)
+    bootstrap-datepicker-rails (0.6.41)
       railties (>= 3.0)
-    bootstrap-sass (2.2.2.0)
+    bootstrap-sass (2.3.0.0)
       sass (~> 3.2)
     builder (3.0.4)
     cocaine (0.4.2)
@@ -120,27 +119,27 @@ GEM
     formatador (0.2.4)
     friendly_id (4.0.9)
     hike (1.2.1)
-    httparty (0.10.0)
+    httparty (0.10.2)
       multi_json (~> 1.0)
-      multi_xml
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
-    jquery-rails (2.1.4)
+    jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-themes (0.0.8)
       httparty
-    json (1.7.6)
+    json (1.7.7)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.19)
-    multi_json (1.5.0)
-    multi_xml (0.5.2)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-ssh (2.6.3)
+    mime-types (1.21)
+    multi_json (1.6.1)
+    multi_xml (0.5.3)
+    net-scp (1.0.6)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.5)
     nokogiri (1.5.6)
     paperclip (3.4.0)
       activemodel (>= 3.0.0)
@@ -152,10 +151,10 @@ GEM
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
-    rack (1.4.4)
+    rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
-    rack-ssl (1.3.2)
+    rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -175,7 +174,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.1)
       json (~> 1.4)
     ruby-hmac (0.4.0)
     sass (3.2.5)
@@ -193,7 +192,7 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.16.0)
+    thor (0.17.0)
     tilt (1.3.3)
     treetop (1.4.12)
       polyglot
