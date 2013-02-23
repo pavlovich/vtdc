@@ -1,6 +1,6 @@
 class AddDefaultUser < ActiveRecord::Migration
   def self.up
-    peter = User.new
+    peter = Member.new
     peter.name="Peter Pavlovich"
     peter.email_address="pavlovich@gmail.com"
     peter.state="active"

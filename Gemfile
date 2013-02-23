@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-
+gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -9,10 +9,14 @@ group :production do
     gem 'pg'
 
 end
+
 group :development, :test do
-    gem 'sqlite3'
-    # gem "hobo", "= 2.0.0.pre8.e9a7730"
-    # gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
+  gem 'sqlite3'
+  # gem "hobo", "= 2.0.0.pre8.e9a7730"
+  # gem "hobo_jquery_ui", "2.0.0.pre8.e9a7730"
+  # gem "rspec-rails", ">= 2.5.0"
+  # gem "shoulda", :group => :test
+  # gem "factory_girl", :group => :test
 end
 
 # Gems used only for assets and not required

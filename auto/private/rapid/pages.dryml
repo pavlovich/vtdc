@@ -6,9 +6,125 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&CustomPage"><ht key="custom_page.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Member"><ht key="member.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Photo"><ht key="photo.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&UserProfile"><ht key="user_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== CustomPage Pages ====== -->
+
+<def tag="index-page" for="CustomPage">
+  <page merge title="#{ht 'custom_page.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page custom-page" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="custom_page.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="custom_page.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="custom_page.actions.new">New Custom page</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="CustomPage">
+  <page merge title="#{ht 'custom_page.new.title', :default=>[' New Custom page'] }">
+    <body: class="new-page custom-page" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="custom_page.new.heading">
+          New Custom page
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'custom_page.actions.create', :default=>['Create Custom page']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="CustomPage">
+  <page merge title="#{ht 'custom_page.show.title', :default=>['Custom page'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page custom-page" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="custom_page.show.heading" name="#{name(:no_wrapper => true)}">
+          Custom page <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="display_children_on_side_menu, display_children_as_dropdown_menu, visible_to_public" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="custom_page.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Custom page
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <view:description param="description" />
+      <field-list fields="menu_title, contents, slug, parent_page" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="CustomPage">
+  <page merge title="#{ht 'custom_page.edit.title', :default=>['Edit Custom page'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page custom-page" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="custom_page.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Custom page
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'custom_page.actions.delete', :default=>['Remove This Custom page']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
 
 
 
@@ -34,6 +150,9 @@
     </content-header:>
 
     <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="member.actions.new">New Member</ht>
+      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -41,13 +160,6 @@
 
       <page-nav param="bottom-page-nav"/>
 
-
-      <div param="new-form">
-        <h3 param="new-form-heading">
-          <ht key="member.form.new.heading">New Member</ht>
-        </h3>
-        <form with="&@invalid_record || new_for_current_user(Member)" param/>
-      </div>
 
     </content-body:>
   </page>
@@ -213,6 +325,9 @@
     </content-header:>
 
     <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="photo.actions.new">New Photo</ht>
+      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -260,6 +375,12 @@
       </h2>
 
       <record-flags fields="public" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Photo
+        </ht>
+      </a>
     </content-header:>
 
     <content-body: param>
@@ -316,6 +437,9 @@
     </content-header:>
 
     <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="user_profile.actions.new">New User profile</ht>
+      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -363,6 +487,12 @@
       </h2>
 
       <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="user_profile.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit User profile
+        </ht>
+      </a>
     </content-header:>
 
     <content-body: param>

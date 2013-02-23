@@ -13,12 +13,20 @@ end
 
 module Vtdc
   class Application < Rails::Application
-    # Hobo: the admin subsite loads admin.css & admin.js
-    config.assets.precompile += %w(admin.css admin.js)
+    config.i18n.default_locale = :en
+    # Hobo: the private subsite loads private.css & private.js
+    config.assets.precompile += %w(private.css private.js)
+    
+    config.generators do |g|
+      g.test_framework :rspec, :fixtures => true
+      g.fallbacks[:rspec] = :test_unit
+      g.fixture_replacement = :factory_girl
+    end
+
     # Hobo: Named routes have changed in Hobo 2.0.   Set to false to emit both the 2.0 and 1.3 names.
     config.hobo.dont_emit_deprecated_routes = true
-    # Hobo: the front subsite loads front.css & front.js
-    config.assets.precompile += %w(front.css front.js)
+    # Hobo: the public subsite loads public.css & public.js
+    config.assets.precompile += %w(public.css public.js)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

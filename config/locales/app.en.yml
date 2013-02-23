@@ -11,8 +11,8 @@ en:
 #  activerecord:
 #    models:
 #      user:
-#        one: User
-#        other: Users
+#        one: Member
+#        other: Members
 #    attributes:
 #      user:
 #        name: Name
@@ -21,5 +21,5 @@ en:
 #        password_confirmation: Password Confirmation
 #        email_address: Email Address
 #    attribute_help:
-#      user:
+#      member:
 #        email_address: We will never share your address with third parties

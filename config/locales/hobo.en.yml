@@ -27,7 +27,7 @@ en:
     index_for_owner:
       title: "%{model} for"
       # be aware that you will loose the automatic Your <collection> / Jom's <collection>
-      # default output for User models
+      # default output for Member models
       # you better define the heading.* in the specific collection namespace
       #heading:
       subheading: "For:"
@@ -143,7 +143,7 @@ en:
         other: "There are %{count} %{model}."
       # you can use the following to completely override the collection heading
       # be aware that you will loose the automatic Your <collection> / Jom's <collection>
-      # default output for User models
+      # default output for Member models
       # you better define the heading.* in the specific collection namespace
       #heading:
       add_form_heading: "Add %{model}"

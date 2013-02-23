@@ -1,17 +1,17 @@
 Vtdc::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  match ENV['RAILS_RELATIVE_URL_ROOT'] => 'front#index' if ENV['RAILS_RELATIVE_URL_ROOT']
+  match ENV['RAILS_RELATIVE_URL_ROOT'] => 'public#index' if ENV['RAILS_RELATIVE_URL_ROOT']
 
-  root :to => 'front#index'
+  root :to => 'public#index'
 
-  match 'users/:id/reset_password_from_email/:key' => 'users#reset_password', :as => 'reset_password_from_email'
+  match 'members/:id/reset_password_from_email/:key' => 'members#reset_password', :as => 'reset_password_from_email'
 
-  match 'users/:id/accept_invitation_from_email/:key' => 'users#accept_invitation', :as => 'accept_invitation_from_email'
+  match 'members/:id/accept_invitation_from_email/:key' => 'members#accept_invitation', :as => 'accept_invitation_from_email'
 
-  match 'users/:id/activate_from_email/:key' => 'users#activate', :as => 'activate_from_email'
+  match 'members/:id/activate_from_email/:key' => 'members#activate', :as => 'activate_from_email'
 
-  match 'search' => 'front#search', :as => 'site_search'
+  match 'search' => 'public#search', :as => 'site_search'
 
   match '/static/:id' => 'static#show_custom_content'
 
@@ -56,9 +56,9 @@ Vtdc::Application.routes.draw do
   #   end
 
   # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #   namespace :private do
+  #     # Directs /private/products/* to Admin::ProductsController
+  #     # (app/controllers/private/products_controller.rb)
   #     resources :products
   #   end
 

@@ -5,16 +5,8 @@
 Vtdc::Application.routes.draw do
 
 
-  # Resource routes for controller photos
-  resources :photos, :only => [:show, :update, :destroy]
-
-
-  # Resource routes for controller user_profiles
-  resources :user_profiles, :only => [:index, :show, :update, :destroy]
-
-
-  # Resource routes for controller users
-  resources :users, :only => [:edit, :show, :create, :update, :destroy] do
+  # Resource routes for controller members
+  resources :members, :only => [:edit, :show, :create, :update, :destroy] do
     member do
       get 'account'
       put 'accept_invitation', :action => 'do_accept_invitation'
@@ -24,28 +16,28 @@ Vtdc::Application.routes.draw do
     end
   end
 
-  # User routes for controller users
-  match 'login(.:format)' => 'users#login', :as => 'user_login'
-  get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
-  match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
-
-  namespace :admin do
+  # User routes for controller members
+  match 'member_login(.:format)' => 'members#login', :as => 'member_login'
+  get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
+  match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
 
 
-    # Resource routes for controller admin/custom_pages
+  # Resource routes for controller photos
+  resources :photos, :only => [:show, :update, :destroy]
+
+
+  # Resource routes for controller user_profiles
+  resources :user_profiles, :only => [:index, :show, :update, :destroy]
+
+  namespace :private do
+
+
+    # Resource routes for controller private/custom_pages
     resources :custom_pages
 
 
-    # Resource routes for controller admin/photos
-    resources :photos
-
-
-    # Resource routes for controller admin/user_profiles
-    resources :user_profiles
-
-
-    # Resource routes for controller admin/users
-    resources :users do
+    # Resource routes for controller private/members
+    resources :members do
       collection do
         post 'invite', :action => 'do_invite'
         get 'invite'
@@ -55,10 +47,18 @@ Vtdc::Application.routes.draw do
       end
     end
 
-    # User routes for controller admin/users
-    match 'login(.:format)' => 'users#login', :as => 'user_login'
-    get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
-    match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
+    # User routes for controller private/members
+    match 'member_login(.:format)' => 'members#login', :as => 'member_login'
+    get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
+    match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
+
+
+    # Resource routes for controller private/photos
+    resources :photos
+
+
+    # Resource routes for controller private/user_profiles
+    resources :user_profiles
 
   end
 

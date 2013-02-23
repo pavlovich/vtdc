@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(:version => 20130223095038) do
 
   add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"
 
+  create_table "members", :force => true do |t|
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
+    t.string   "name"
+    t.string   "email_address"
+    t.boolean  "administrator",                           :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state",                                   :default => "invited"
+    t.datetime "key_timestamp"
+  end
+
+  add_index "members", ["state"], :name => "index_members_on_state"
+
   create_table "photos", :force => true do |t|
     t.string   "caption"
     t.boolean  "public"
@@ -62,8 +78,8 @@ ActiveRecord::Schema.define(:version => 20130223095038) do
   end
 
   create_table "profilesubls", :force => true do |t|
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_profiles", :force => true do |t|
@@ -72,21 +88,5 @@ ActiveRecord::Schema.define(:version => 20130223095038) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "users", :force => true do |t|
-    t.string    "crypted_password",          :limit => 40
-    t.string    "salt",                      :limit => 40
-    t.string    "remember_token"
-    t.timestamp "remember_token_expires_at"
-    t.string    "name"
-    t.string    "email_address"
-    t.boolean   "administrator",                           :default => false
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "state",                                   :default => "invited"
-    t.timestamp "key_timestamp"
-  end
-
-  add_index "users", ["state"], :name => "index_users_on_state"
 
 end

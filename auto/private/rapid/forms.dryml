@@ -1,6 +1,18 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
+<def tag="form" for="CustomPage">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="menu_title, title, description, contents, display_children_on_side_menu, display_children_as_dropdown_menu, visible_to_public, slug, parent_page" param/>
+    <div param="actions">
+      <submit label="#{ht 'custom_page.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Member">
   <form merge param="default">
     <error-messages param/>
