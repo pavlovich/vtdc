@@ -47,8 +47,9 @@ GIT
     hobo_support (2.0.0.pre10)
       rails (~> 3.2.0)
 
-PATH
-  remote: /Users/pavlovich/projects/opensource/hobo_bootstrap
+GIT
+  remote: https://github.com/pavlovich/hobo_bootstrap.git
+  revision: a02d12ebf47554f4f1379abf7edd61299c64f0fb
   specs:
     hobo_bootstrap (2.0.0.pre8)
       bootstrap-sass (~> 2.1)

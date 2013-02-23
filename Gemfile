@@ -8,7 +8,6 @@ gem 'thin'
 group :production do
     gem 'pg'
     #gem "hobo_bootstrap", :git => "git://github.com/Hobo/hobo_bootstrap.git"
-    gem "hobo_bootstrap", :git => "https://github.com/pavlovich/hobo_bootstrap.git"
 end
 
 group :development, :test do
@@ -18,7 +17,7 @@ group :development, :test do
   # gem "rspec-rails", ">= 2.5.0"
   # gem "shoulda", :group => :test
   # gem "factory_girl", :group => :test
-  gem "hobo_bootstrap", :path => "/Users/pavlovich/projects/opensource/hobo_bootstrap"
+  # gem "hobo_bootstrap", :path => "/Users/pavlovich/projects/opensource/hobo_bootstrap"
 end
 
 # Gems used only for assets and not required
@@ -52,6 +51,8 @@ gem 'jquery-rails'
 
 gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
 gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
+
+gem "hobo_bootstrap", :git => "https://github.com/pavlovich/hobo_bootstrap.git"
 
 # Hobo has a lot of assets.   Stop cluttering the log in development mode.
 gem "quiet_assets", :group => :development
