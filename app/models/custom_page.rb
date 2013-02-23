@@ -23,6 +23,8 @@ class CustomPage < ActiveRecord::Base
 
   friendly_id :menu_title, use: :slugged
 
+  scope :top_level_pages, where("parent_page_id IS NULL")
+
   def aside_position
     'left'
   end
@@ -36,7 +38,7 @@ class CustomPage < ActiveRecord::Base
   end
 
   def show_aside?
-    display_children_on_side_menu?
+    display_children_on_side_menu? && has_child_pages?
   end
 
   def show_top_menu?
@@ -45,6 +47,11 @@ class CustomPage < ActiveRecord::Base
 
   def menu_url
     "/static/#{slug}"
+  end
+
+  def top_menu_label
+    return parent_page.top_menu_label unless !has_parent_page?
+    return menu_title
   end
 
   # --- Permissions --- #

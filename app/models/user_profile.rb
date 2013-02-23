@@ -8,25 +8,12 @@ class UserProfile < ActiveRecord::Base
     timestamps
   end
 
-  attr_accessible :bio, :publish_date, :top_photo, :bottom_photo, :top_url, :bottom_url
+  attr_accessible :bio, :publish_date
 
-  has_attached_file :top_photo,  :styles => {
-      :thumb=> "100x100#",
-      :small  => "150x150>",
-      :medium => "300x300>",
-      :large =>   "400x400>" }
-  has_attached_file :bottom_photo,  :styles => {
-      :thumb=> "100x100#",
-      :small  => "150x150>",
-      :medium => "300x300>",
-      :large =>   "400x400>" }
+  has_and_belongs_to_many :photos
 
   def self.attr_order
-    return [:bio, :publish_date, :top_photo, :bottom_photo]
-  end
-
-  def bio=(a_string)
-    @bio = a_string
+    return [:bio, :publish_date]
   end
 
   # --- Permissions --- #

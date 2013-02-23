@@ -1,6 +1,18 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
+<def tag="form" for="Photo">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="caption, public" param/>
+    <div param="actions">
+      <submit label="#{ht 'photo.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="UserProfile">
   <form merge param="default">
     <error-messages param/>

@@ -9,28 +9,42 @@
 
 <!--  Carousel - consult the Twitter Bootstrap docs at
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
-<div id="myCarousel" class="span8 carousel slide" data-interval="6000" data-pause="Pausing ..."><!-- class of slide for animation -->
+<div id="myCarousel" class="span7 carousel slide" data-interval="999999" data-pause="Pausing ..."><!-- class of slide for animation -->
+              <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+              </ol>
   <div class="carousel-inner">
     <div class="item active"><!-- class of active since it's the first item -->
+      <div class="image-holder">
       <img src="http://www.k9stud.com/images/mitch%20holden/mitch%20holden_doberman-pinscher-a20124140572.jpg" alt="" />
+      </div>
       <div class="carousel-caption">
         <p>Bite work is FUN !!!</p>
       </div>
     </div>
     <div class="item">
+      <div class="image-holder">
       <img src="http://cdn.pedigreedatabase.com/dogbreeds/doberman_pinscher.jpg" alt="" />
+      </div>
       <div class="carousel-caption">
         <p>Gorgeous!!!!</p>
       </div>
     </div>
     <div class="item">
+      <div class="image-holder">
       <img src="http://howmanyarethere.net/wp-content/uploads/2012/09/11927798Doberman_Pinscher_Puppy.jpg" alt="" />
+      </div>
       <div class="carousel-caption">
         <p>Pretty cute puppy!</p>
       </div>
     </div>
     <div class="item">
+      <div class="image-holder">
       <img src="http://3.bp.blogspot.com/-yopTanRwzjc/TslU9lbTs3I/AAAAAAAAH1M/lsT8dKOrXe0/s1600/perros+cachorro+raza+doberman.jpg" alt="" />
+      </div>
       <div class="carousel-caption">
         <p>Adorable ... but what a nightmare!!!!</p>
       </div>
@@ -41,35 +55,14 @@
     <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
 </div>
-	<div class="carousel-navbar">
-        <div class="carousel-nav current" > 1 </div>
-        <div class="carousel-nav"> 2 </div>
-        <div class="carousel-nav"> 3 </div>
-        <div class="carousel-nav"> 4 </div>
-    </div>
 <!-- /.carousel -->
         <script>
           $(document).ready(
           function(){
             $('.carousel').carousel();
-
-            $('#myCarousel').bind('slid', function(e){ //This event is fired when the carousel has completed its slide transition.
-
-                index = $('#myCarousel .item').index($('#myCarousel .carousel-inner .active')); // find the index of current slide
-                $('.carousel-navbar .current').removeClass('current'); // reset the navigation
-                $('.carousel-nav').eq(index).addClass('current'); // update the navigation
-            });
-
-            $('.carousel-nav').bind('click', function(e){
-                $('.carousel-navbar .current').removeClass('current'); // reset the navigation
-                index = $('.carousel-nav').index(this); // find the clicked slide navigation
-                $('#myCarousel').carousel(index); // navigate to the selected slider
-                $(this).addClass('current'); // mark selected to the clicked navigation
-            });
-
           });
         </script>
-        <div class="news span4">
+        <div class="news span5">
         <h1>The Latest</h1>
         <ul>
             <li>

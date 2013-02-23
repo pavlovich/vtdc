@@ -14,7 +14,7 @@ class StaticController < ApplicationController
       @custom_attributes[:title]=@custom_page.title
       @custom_attributes[:full_title]="VTDC : #{@custom_page.title}"
       @custom_attributes[:aside_location]=@custom_page.aside_position
-      @custom_attributes[:show_aside]=@custom_page.show_aside?.to_s
+      @custom_attributes[:aside_size]="0" if !@custom_page.show_aside?
       @custom_attributes[:show_top_menu]=@custom_page.show_top_menu?.to_s
       render
     else

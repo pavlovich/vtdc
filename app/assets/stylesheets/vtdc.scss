@@ -180,23 +180,38 @@ form {
 
 .carousel {
   margin-left: 0px;
+  height: 480px;
 }
 
-.carousel-inner > .item > img {
+.carousel-inner {
+  position: absolute;
+  top: 0px;
+  height: 480px;
+}
+
+.carousel-inner .image-holder {
+  width: 540px;
+  height: 420px;
+  float: left;
+  clear: both;
+}
+
+
+.carousel-inner > .item > .image-holder > img {
   display: block;
   line-height: 1;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  width: 540px;
+  height: 420px;
+  margin: auto;
 }
 
 .carousel-caption {
-  position:relative;
   background: #4b4b4b;
-  clear: both;
   float: left;
+  height: 60px;
   text-align: center;
   width: 100%;
+  position: relative;
 
   p {
     color: whitesmoke;
@@ -241,6 +256,8 @@ form {
     -o-transition: .7s ease-in-out opacity;
     -webkit-transition: .7s ease-in-out opacity;
     left: 0 !important;
+    height: 420px;
+    width: 540px;
   }
 
   .next.left, .prev.right {
@@ -255,23 +272,23 @@ form {
 
 }
 
-.carousel-navbar {
-  text-align:center;
-}
-
-.carousel-nav {
-  border: 1px solid #ccc;
-  display:inline-block;
-  padding: 5px 10px;
-  color:black;
-}
-
-.carousel-nav:hover{
-  border:1px solid #777;
-}
-
-.carousel-nav.current {
-  background-color:#ccc;
+.carousel-control {
+  background: none repeat scroll 0 0 #222222;
+  border: 3px solid white;
+  border-radius: 23px 23px 23px 23px;
+  bottom: 6px;
+  color: white;
+  font-size: 60px;
+  font-weight: 100;
+  height: 40px;
+  left: 15px;
+  line-height: 30px;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  top: inherit;
+  width: 40px;
+  margin-top: 0px;
 }
 
 .custom-page{
@@ -296,4 +313,40 @@ form {
       padding-right: 5px;
     }
   }
+}
+
+.aside {
+  .sidebar-nav {
+    border: 1px solid #E3E3E3;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  }
+  li.active {
+    background: #0088CC;
+    a {
+      color: whitesmoke;
+    }
+  }
+  div.arrow {
+    float: right;
+  }
+  .arrow {
+    height: 0;
+    width: 0;
+    border: 4px solid transparent;
+  }
+  .arrow.up {
+    border-bottom-color: #222222;
+    margin-top: 3px;
+  }
+  .arrow.down {
+    border-top-color: #222222;
+    margin-top: 7px;
+  }
+}
+
+.aside-column > .well {
+  border: none;
+  border-radius: none;
+  box-shadow: none;
 }

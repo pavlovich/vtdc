@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       if this.valid?
         self.current_user = this
         flash[:notice] = t("hobo.messages.you_signed_up", :default=>"You have signed up")
+        redirect_to home_page
       end
     end
   end

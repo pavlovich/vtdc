@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216020440) do
+ActiveRecord::Schema.define(:version => 20130223095038) do
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "custom_pages", :force => true do |t|
     t.string   "menu_title"
@@ -29,24 +45,32 @@ ActiveRecord::Schema.define(:version => 20130216020440) do
 
   add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"
 
+  create_table "photos", :force => true do |t|
+    t.string   "caption"
+    t.boolean  "public"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "photos_user_profiles", :id => false, :force => true do |t|
+    t.integer "photo_id"
+    t.integer "user_profile_id"
+  end
+
   create_table "profilesubls", :force => true do |t|
     t.timestamp "created_at"
     t.timestamp "updated_at"
   end
 
   create_table "user_profiles", :force => true do |t|
-    t.text      "bio"
-    t.date      "publish_date"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "top_photo_file_name"
-    t.string    "top_photo_content_type"
-    t.integer   "top_photo_file_size"
-    t.timestamp "top_photo_updated_at"
-    t.string    "bottom_photo_file_name"
-    t.string    "bottom_photo_content_type"
-    t.integer   "bottom_photo_file_size"
-    t.timestamp "bottom_photo_updated_at"
+    t.text     "bio"
+    t.date     "publish_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

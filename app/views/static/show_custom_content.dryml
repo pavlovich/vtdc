@@ -1,9 +1,9 @@
 <page merge-attrs="&@custom_attributes">
   <prepend-container:>
-  <custom-page-top-menu if="&@custom_page.show_top_menu?" />
+<!--    <custom-page-top-menu if="&@custom_page.show_top_menu?" />  -->
   </prepend-container:>
-  <aside: replace>
-    <custom-page-aside if="&@custom_page.show_aside?" />
+  <aside:>
+      <custom-page-aside  />
   </aside:>
   <content-header:>
     <%= raw @custom_page.title %>

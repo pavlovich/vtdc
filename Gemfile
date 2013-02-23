@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-gem 'thin'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -64,6 +62,6 @@ gem 'paperclip'
 #gem 'hobo_paperclip', "= 2.0.0.pre8.e9a7730"
 gem 'hobo_paperclip', :git => "git://github.com/Hobo/hobo_paperclip.git", :branch => "master"
 gem 'fog'
-
+gem 'ckeditor'
 gem 'friendly_id'
 

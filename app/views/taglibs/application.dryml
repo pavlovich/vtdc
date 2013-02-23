@@ -1,4 +1,4 @@
-<!-- this file is included by front_site.dryml, admin_site.dryml et al, so you can place common code in this file. -->
+<!-- this file is included by front_site.dryml, admin_site.dryml et al, so you can place common code in this file-->
 
 <def tag='vtdc-account-nav'>
   <div class='vtdc-account-nav nav-collapse collapse'>
@@ -39,7 +39,7 @@
             <div class="app-header container">
                 <div class="app-name-2">
                     <div id="logo">
-                        <image src="VTDCLogo2.png"/>
+                        <image src="VTDCLogoHeader.png"/>
                     </div>
                     <div id="name">
                         <div id="name1">VTDC</div>
@@ -68,9 +68,9 @@
 
 </extend>
 
-<extend tag="form" for="UserProfile">
+<extend tag="form" for="Photo">
   <old-form merge multipart>
-    <field-list: fields="bio, publish_date, top_photo, bottom_photo"/>
+    <field-list: fields="caption, public, photo"/>
   </old-form>
 </extend>
 
@@ -91,29 +91,93 @@
    <%= image_tag absolute_attachment_url(@this.top_photo, :thumb) %>
 </def>
 
+<extend tag="main-nav">
+  <old-main-nav merge>
+    <append-default:>
+        <repeat with="&CustomPage.top_level_pages">
+            <top-custom-page-menu />
+        </repeat>
+    </append-default:>
+  </old-main-nav>
+</extend>
 
-<!-- <def tag="main-nav">
-  <navigation class="main-nav" merge-attrs param="default">
-    <nav-item href="#{base_url}/">Home</nav-item>
-        <% linkable_models.each do |m| -%>
-    <nav-item with="#{m.name}">
-        <ht key="#{m.to_s.underscore}.nav_item" count="100">
-            <model-name-human count="100"/>
-        </ht>
-    </nav-item>
-        <% end -%>
-  </navigation>
-</def> -->
+<def tag="top-custom-page-menu">
+          <if test="&this.has_child_pages?">
+             <li class="dropdown">
+              <a href="&this.menu_url" class="dropdown" data-toggle="dropdown">
+                <%= this.menu_title %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                  <repeat with="&this.child_pages">
+                      <if test="&this.has_child_pages?">
+                          <li class="dropdown-submenu">
+                              <child-custom-page-menu />
+                          </li>
+                      </if>
+                      <else>
+                          <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                      </else>
+                  </repeat>
+              </ul>
+            </li>
+          </if>
+          <else>
+              <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+          </else>
+      </def>
+
+      <def tag="child-custom-page-menu">
+          <a tabindex="-1" href="&this.menu_url"><%= this.menu_title %></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <repeat with="&this.child_pages">
+                  <if test="&this.has_child_pages?">
+                      <li class="dropdown-submenu">
+                          <child-custom-page-menu />
+                      </li>
+                  </if>
+                  <else>
+                      <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                  </else>
+              </repeat>
+          </ul>
+      </def>
+
+<def tag="aside-custom-page-menu">
+    <if test="&this.has_child_pages?">
+        <li>
+            <a href="&this.menu_url" data-target="#xxx"><%= this.menu_title %><div class="arrow down"></div></a>
+            <ul id="xxx" class="in collapse" style="height: auto;">
+                <repeat with="&this.child_pages">
+                    <if test="&this.has_child_pages?">
+                        <aside-custom-page-menu/>
+                    </if>
+                    <else>
+                        <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                    </else>
+                </repeat>
+            </ul>
+        </li>
+    </if>
+    <else>
+        <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+    </else>
+</def>
+
 
 <def tag="custom-page-aside">
-  <ul>
-    <li>
-      test 1
-    </li>
-    <li>
-      test 2
-    </li>
-  </ul>
+
+    <div class="sidebar-nav">
+        <ul class="nav nav-list" id="my-collapse-nav">
+            <li class="nav-header"><%= @custom_page.top_menu_label %></li>
+            <li class="divider"></li>
+            <aside-custom-page-menu with="&@custom_page" />
+        </ul>
+    </div>
+
+    
+    
 </def>
 
 <def tag="custom-page-top-menu">
