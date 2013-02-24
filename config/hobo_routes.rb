@@ -27,7 +27,7 @@ Vtdc::Application.routes.draw do
 
 
   # Resource routes for controller user_profiles
-  resources :user_profiles, :only => [:index, :show, :update, :destroy]
+  resources :user_profiles, :only => [:show, :update, :destroy]
 
   namespace :private do
 

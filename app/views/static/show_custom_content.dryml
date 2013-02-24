@@ -6,9 +6,13 @@
       <custom-page-aside  />
   </aside:>
   <content-header:>
+    <div class="custom-page-header">
     <%= raw @custom_page.title %>
+    </div>
   </content-header:>
   <content-body:>
+    <div class="custom-page-contents">
     <%= raw @custom_page.contents %>
+    </div>
   </content-body:>
 </page>

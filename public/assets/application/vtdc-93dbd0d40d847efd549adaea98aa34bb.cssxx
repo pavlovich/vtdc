@@ -1,0 +1,450 @@
+/*/*/*/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+
+.login-page, .forgot-password-page {
+    margin: auto;
+    width: 793px;
+}
+
+fieldset.feckless-fields .field{
+    margin-right: 10px;
+}
+
+fieldset.feckless-fields.inline-vertical .field {
+    clear: none;
+    display: inline-block;
+    float: none;
+    height: 1%;
+    margin-bottom: 4px;
+    margin-top: 0;
+    padding: 0;
+}
+
+.edit-page .content-header .delete-button {
+    float: right;
+    margin-top: -25px;
+    margin-right: 10px;
+}
+
+*
+{
+margin: 0px;
+padding: 0px;
+}
+
+a:link {
+	color: #F5FFDC;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+
+a:visited {
+	color: #F5FFDC;
+}
+
+body {
+	
+	background: #78952D url(back_all.gif) repeat-x;
+	font: 13px Arial, Helvetica, sans-serif;
+	color: #000000;
+	width: 793px;
+}
+
+#content
+{
+	margin: 0 auto;
+	background: #98B74C;
+	width: 793px;
+	text-align: left;
+}
+
+#main
+{
+width: 793px;
+padding-top: 10px;
+background: url(table_back.gif) repeat-x top;
+}
+
+
+#headdder {
+	height: 303px;
+	text-align: right;
+	background: url(header.jpg) no-repeat;		
+}
+
+.page-header {
+	height: 303px;
+	text-align: right;
+	background: url(VTDCLogo.png) no-repeat;		
+}
+
+.page-header h1 {
+    font-family: "Arial Black",Tahoma,Arial,sans-serif;
+    font-size: 36px;
+    letter-spacing: -1.5pt;
+    margin: 0px;
+    padding: 0px;
+}
+
+.app-name div{
+	float: left;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-style: italic;
+	font-size: 40px;
+	color: #5C722A;
+	margin-top: 20px;
+	margin-left: 20px;	
+}
+
+.edit-page .content-header {
+    margin-left: 0;
+    overflow: hidden;
+    overflow: hidden;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-right: 0px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.edit-page .content-header h2 {
+    padding-left: 30px;
+}
+
+
+.app-name {
+    background: url("header.jpg") no-repeat scroll 0 0 transparent;
+    height: 310px;
+    text-align: right;
+}
+
+.section.with-flash{
+	background-color: transparent;
+	background-image: none;
+}
+
+.app-name a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	font-size: 18px;
+	color: #5C722A;
+}
+.app-name H2 a
+{
+font-size: 12px;
+}
+
+.page-header {
+    background: none;
+    color: none;
+}
+
+.page-header .navigation.main-nav{
+margin: 0px;
+width: 518px;
+height: 25px;
+padding-top: 0px;
+padding-left: 0px;	
+background-image: url("back_menu.gif");
+}
+
+.page-header .navigation.main-nav ul {
+	list-style: none;	
+}
+
+.page-header .navigation.main-nav li {
+	
+	display: inline; 
+	
+}
+.content {
+    background: none repeat scroll 0 0 #98B74C;
+    margin: 0 auto;
+    text-align: left;
+    width: 793px;
+}
+
+.section.with-flash.content{
+	background: url("table_back.gif") repeat-x scroll center top #98B74C;
+}
+
+.page-header .navigation.main-nav a {
+	float: left;
+	width: 100px;
+    display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	paddlkjing-top: 10px;
+	fonlkjt-size: 14px;
+	text-transform: uppercase;
+}
+
+.page-header .navigation.main-nav a {
+    background: transparent;
+}
+
+.content-header {
+    margin-bottom: 50px;
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+    border-top: 1px solid black;
+}
+
+
+.main-dddnav a:hover {
+	width: 100px;
+    height: 23px;
+	color: #5C722A;
+	text-decoration: underline;
+	background: transparent;
+}
+.page-header .navigation.main-nav a:hover, .page-header .navigation.main-nav li.current a:hover{
+	color: #ffffff;
+	background: url(menu_hov.png) no-repeat;
+}
+
+.page-header .navigation.main-nav li.current a {
+    background: transparent;
+    border: none;
+    color: #222222;
+}
+
+#menu
+{
+margin: 0 auto;
+width: 518px;
+height: 48px;
+padding-top: 10px;
+padding-left: 200px;
+}
+
+#menu ul {
+	list-style: none;	
+}
+
+#menu li {
+	
+	display: inline; 
+	
+}
+
+#menu a {
+	float: left;
+	width: 100px;
+	height: 23px;
+    display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 10px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+#menhhhu a:hover {
+	width: 100px;
+    height: 23px;
+	color: #5C722A;
+	text-decoration: underline;
+	background: #ffffff;
+}
+#menu a:hover{
+	color: #ffffff;
+	background: url(menuhov.jpg) no-repeat;
+}
+
+
+
+
+#left
+{
+	width: 220px;
+	margin-left: 20px;
+}
+
+#left H3
+{
+width: 195px;
+height: 36px;
+font-size: 14px;
+font-weight: bold;
+padding-left: 25px;
+padding-top: 15px;
+text-transform: uppercase;
+color: #ffffff;
+background: url(title.gif) repeat-x
+}
+
+#left ul {
+	list-style: none;
+	margin-bottom: 10px;
+	background: url(title_back.gif) repeat-x top;
+}
+
+
+#left li ul {
+	border: 0px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	background: none;
+}
+
+#left li li {
+	padding: 4px 20px;
+}
+
+#left a {
+	color: #F5FFDC;
+	text-decoration: none;
+}
+
+#left a:hover {
+	color: #F5FFDC;
+	text-decoration: underline;
+}
+
+#left a:visited {
+	color: #F5FFDC;
+}
+
+#left p
+{
+padding: 10px;
+}
+
+#calendar1 {
+	padding: 20px 10px 20px 10px;
+}
+
+#calendar table {
+	width: 100%;
+	text-align: center;
+}
+
+#calendar thead {
+
+}
+
+#calendar tbody td {
+	border: 1px solid #F1F1F1;
+}
+
+#calendar #prev {
+	text-align: left;
+}
+
+#calendar #next {
+	text-align: right;
+}
+
+#calendar tfoot a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#calendar #now {
+	background: #696969;
+	border: 1px solid #ff0000;
+	font-weight: bold;
+	color: #ffffff
+}
+
+#right
+{
+float: right;
+width: 510px;
+padding-right: 20px;
+}
+
+#right H4
+{
+	margin: 0;
+	padding: 0px;
+	font-size: 12px;
+	color: #F5FFDC;
+}
+
+#right a
+{
+color: #F5FFDC;
+text-decoration: none;
+}
+
+#right a:hover
+{
+color: #F5FFDC;
+text-decoration: underline;
+}
+
+#right a:visited
+{
+color: #F5FFDC;
+text-decoration: none;
+}
+
+#right p {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+#right h2 {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	color: #F5FFDC;
+}
+
+#right ol, #right ul
+{
+margin-left: 30px;
+}
+
+
+.date {
+	text-align: right;
+	color: #F5FFDC;
+	font-size: 11px;
+}
+
+.date a {
+	color: #F5FFDC;
+}
+
+
+
+#footer {
+	height: 49px;
+	width: 793px;
+	clear: both;
+	padding-top: 30px;
+	background: url(footer.gif) repeat-x bottom;
+	border-top: 4px solid #918E48;
+}
+
+#footer p {
+	margin: 0;
+	font-size: 10px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#footer a {
+	color: #ffffff;
+}
+*/*/*/

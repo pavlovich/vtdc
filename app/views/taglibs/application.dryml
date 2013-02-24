@@ -1,4 +1,4 @@
-<!-- this file is included by front_site.dryml, admin_site.dryml et al, so you can place common code in this file-->
+<!-- this file is included by public_site.dryml, private_site.dryml et al, so you can place common code in this file-->
 
 <def tag='vtdc-account-nav'>
   <div class='vtdc-account-nav nav-collapse collapse'>

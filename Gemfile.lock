@@ -25,14 +25,6 @@ GIT
   remote: https://github.com/Hobo/hobo.git
   revision: 74068f70a2823c0da5b01dd3be6bcc61f726ca8e
   specs:
-    dryml (2.0.0.pre10)
-      actionpack (~> 3.2.0)
-      hobo_support (= 2.0.0.pre10)
-    hobo (2.0.0.pre10)
-      dryml (= 2.0.0.pre10)
-      hobo_fields (= 2.0.0.pre10)
-      hobo_support (= 2.0.0.pre10)
-      will_paginate (~> 3.0.0)
     hobo_fields (2.0.0.pre10)
       hobo_support (= 2.0.0.pre10)
     hobo_jquery (2.0.0.pre10)
@@ -48,8 +40,21 @@ GIT
       rails (~> 3.2.0)
 
 GIT
+  remote: https://github.com/pavlovich/hobo.git
+  revision: 88b50b413a86caad1ed7d09748d9db8cb95159a2
+  specs:
+    dryml (2.0.0.pre10)
+      actionpack (~> 3.2.0)
+      hobo_support (= 2.0.0.pre10)
+    hobo (2.0.0.pre10)
+      dryml (= 2.0.0.pre10)
+      hobo_fields (= 2.0.0.pre10)
+      hobo_support (= 2.0.0.pre10)
+      will_paginate (~> 3.0.0)
+
+GIT
   remote: https://github.com/pavlovich/hobo_bootstrap.git
-  revision: a02d12ebf47554f4f1379abf7edd61299c64f0fb
+  revision: bb50d0f29836f3b461aa26200bb57b1f9283b5c7
   specs:
     hobo_bootstrap (2.0.0.pre8)
       bootstrap-sass (~> 2.1)
@@ -218,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   ckeditor
   coffee-rails (~> 3.2.1)
+  dryml!
   fog
   friendly_id
   hobo!

@@ -51,7 +51,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
+# gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
+gem 'hobo', :git => "https://github.com/pavlovich/hobo.git"
+gem 'dryml', :git => "https://github.com/pavlovich/hobo.git"
+# gem 'hobo', :path => "/Users/pavlovich/projects/opensource/hobo"
 gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
 
 gem "hobo_bootstrap", :git => "https://github.com/pavlovich/hobo_bootstrap.git"

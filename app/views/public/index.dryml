@@ -38,7 +38,7 @@
       <img src="http://howmanyarethere.net/wp-content/uploads/2012/09/11927798Doberman_Pinscher_Puppy.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Pretty cute puppy!</p>
+        <p>Adorable ... but what a nightmare!!!!</p>
       </div>
     </div>
     <div class="item">
@@ -46,14 +46,14 @@
       <img src="http://3.bp.blogspot.com/-yopTanRwzjc/TslU9lbTs3I/AAAAAAAAH1M/lsT8dKOrXe0/s1600/perros+cachorro+raza+doberman.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Adorable ... but what a nightmare!!!!</p>
+        <p>Pretty cute puppy!</p>
       </div>
     </div>
   </div><!-- /.carousel-inner -->
   <!--  Next and Previous controls below
         href values must reference the id for this carousel -->
-    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 <!-- /.carousel -->
         <script>
@@ -66,16 +66,8 @@
         <h1>The Latest</h1>
         <ul>
             <li>
-                <span class="news-item-title">Fall Show Entries are OPEN:&nbsp;</span>
-                <span class="news-item-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-            </li>
-            <li>
-                <span class="news-item-title">Litter Announcement:&nbsp;</span>
-                <span class="news-item-body">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-            </li>
-            <li>
-                <span class="news-item-title">Helper Seminar Photos:&nbsp;</span>
-                <span class="news-item-body">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Fugiat nulla pariatur. Excepteur sint occaecat.</span>
+                <span class="news-item-title">Upcoming UDC Regional Show:&nbsp;</span>
+                <span class="news-item-body"><br/>We are excited to announce that we will be hosting a UDC Northeast Regional Conformation Show and Temperament Test (TT) in Southern Vermont this Summer on August 24th and 25th, 2013. Stay tuned for updates coming to our website soon!</span>
             </li>
         </ul>
         </div>

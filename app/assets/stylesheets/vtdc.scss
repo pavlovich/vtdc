@@ -291,13 +291,24 @@ form {
   margin-top: 0px;
 }
 
-.custom-page{
-  .main-row{
-    padding-bottom: 20px;
-    .content-body{
-      margin-left: 20px;
-    }
+.custom-page-contents{
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  .big-text {
+    font-weight: bolder;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
   }
+}
+
+.custom-page-header{
+  font-size: 25px;
+  font-weight: heavy;
+  text-shadow: darkgrey 0.08em 0.08em 0.1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .login-page #login {
