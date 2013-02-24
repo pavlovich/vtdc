@@ -86,7 +86,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="display_children_on_side_menu, display_children_as_dropdown_menu, visible_to_public" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="custom_page.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -97,7 +97,7 @@
 
     <content-body: param>
       <view:description param="description" />
-      <field-list fields="parent_page" param/>
+      <field-list fields="menu_title, contents, slug, parent_page" param/>
     </content-body:>
 
   </page>
@@ -199,7 +199,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="administrator" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="member.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -209,6 +209,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>
@@ -373,7 +374,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="public" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -383,6 +384,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="caption" param/>
     </content-body:>
 
   </page>
@@ -494,6 +496,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="bio, publish_date" param/>
     </content-body:>
 
   </page>
