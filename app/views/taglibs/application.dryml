@@ -32,7 +32,7 @@
     <old-page merge>
 
         <custom-scripts: replace>
-            <stylesheet name="vtdc"/>
+            <stylesheet name="aaaa"/>
         </custom-scripts:>
 
         <prepend-body:>
