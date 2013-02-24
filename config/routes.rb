@@ -1,5 +1,4 @@
 Vtdc::Application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
 
   match ENV['RAILS_RELATIVE_URL_ROOT'] => 'public#index' if ENV['RAILS_RELATIVE_URL_ROOT']
 

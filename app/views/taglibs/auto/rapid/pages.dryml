@@ -86,7 +86,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="administrator" param/>
+      <record-flags fields="" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="member.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -96,7 +96,6 @@
     </content-header:>
 
     <content-body: param>
-      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>
@@ -258,11 +257,10 @@
         </ht>
       </h2>
 
-      <record-flags fields="public" param/>
+      <record-flags fields="" param/>
     </content-header:>
 
     <content-body: param>
-      <field-list fields="caption" param/>
     </content-body:>
 
   </page>
@@ -365,7 +363,6 @@
     </content-header:>
 
     <content-body: param>
-      <field-list fields="bio, publish_date" param/>
     </content-body:>
 
   </page>

@@ -27,6 +27,7 @@ module Vtdc
     config.hobo.dont_emit_deprecated_routes = true
     # Hobo: the public subsite loads public.css & public.js
     config.assets.precompile += %w(public.css public.js)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -72,7 +73,7 @@ module Vtdc
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
