@@ -71,6 +71,6 @@ gem 'paperclip'
 #gem 'hobo_paperclip', "= 2.0.0.pre8.e9a7730"
 gem 'hobo_paperclip', :git => "git://github.com/Hobo/hobo_paperclip.git", :branch => "master"
 gem 'fog'
-# gem 'ckeditor'
+gem 'hobo_ckeditor'
 gem 'friendly_id'
 

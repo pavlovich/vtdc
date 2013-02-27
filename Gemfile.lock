@@ -98,6 +98,9 @@ GEM
     bootstrap-sass (2.3.0.1)
       sass (~> 3.2)
     builder (3.0.4)
+    ckeditor (4.0.2)
+      mime-types
+      orm_adapter
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -128,6 +131,10 @@ GEM
     formatador (0.2.4)
     friendly_id (4.0.9)
     hike (1.2.1)
+    hobo_ckeditor (0.0.1)
+      ckeditor
+      hobo_fields
+      hobo_rapid
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -150,6 +157,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.6.5)
     nokogiri (1.5.6)
+    orm_adapter (0.4.0)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -224,6 +232,7 @@ DEPENDENCIES
   hobo!
   hobo_bootstrap!
   hobo_bootstrap_ui!
+  hobo_ckeditor
   hobo_jquery_ui!
   hobo_paperclip!
   jquery-rails

@@ -93,5 +93,7 @@ module Vtdc
         :fog_directory => 'images.totaldoberman.com' #example: assets.blah.com
     }
 
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
   end
 end
