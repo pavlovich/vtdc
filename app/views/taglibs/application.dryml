@@ -74,14 +74,6 @@
   </old-form>
 </extend>
 
-<extend tag="form" for="CustomPage">
-<old-form: merge>
-  <field-list: replace>
-    <%= cktext_area :custom_page, :contents, :ckeditor => {:uiColor => "#AADC6E", :toolbar => "mini"} %>
-  </field-list:>
-</old-form:>
-</extend>
-
  <def tag="input" for="Paperclip::Attachment">
    <%= file_field_tag param_name_for_this, attributes %>
  </def>
@@ -201,3 +193,4 @@
 </div>
 
 </def>
+

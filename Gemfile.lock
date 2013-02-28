@@ -23,33 +23,33 @@ GIT
 
 GIT
   remote: https://github.com/Hobo/hobo.git
-  revision: 74068f70a2823c0da5b01dd3be6bcc61f726ca8e
+  revision: 124445849f4f37a3d7a9ed3ade18613fcc522c80
   specs:
-    hobo_fields (2.0.0.pre10)
-      hobo_support (= 2.0.0.pre10)
-    hobo_jquery (2.0.0.pre10)
-      hobo_rapid (= 2.0.0.pre10)
+    hobo_fields (2.0.0)
+      hobo_support (= 2.0.0)
+    hobo_jquery (2.0.0)
+      hobo_rapid (= 2.0.0)
       jquery-rails (~> 2.0)
-    hobo_jquery_ui (2.0.0.pre10)
-      hobo (= 2.0.0.pre10)
-      hobo_jquery (= 2.0.0.pre10)
+    hobo_jquery_ui (2.0.0)
+      hobo (= 2.0.0)
+      hobo_jquery (= 2.0.0)
       jquery-ui-themes (~> 0.0.4)
-    hobo_rapid (2.0.0.pre10)
-      hobo (= 2.0.0.pre10)
-    hobo_support (2.0.0.pre10)
+    hobo_rapid (2.0.0)
+      hobo (= 2.0.0)
+    hobo_support (2.0.0)
       rails (~> 3.2.0)
 
 GIT
   remote: https://github.com/pavlovich/hobo.git
-  revision: 88b50b413a86caad1ed7d09748d9db8cb95159a2
+  revision: 0b455185f8c20c2d7f28620275798925c95a772c
   specs:
-    dryml (2.0.0.pre10)
+    dryml (2.0.0)
       actionpack (~> 3.2.0)
-      hobo_support (= 2.0.0.pre10)
-    hobo (2.0.0.pre10)
-      dryml (= 2.0.0.pre10)
-      hobo_fields (= 2.0.0.pre10)
-      hobo_support (= 2.0.0.pre10)
+      hobo_support (= 2.0.0)
+    hobo (2.0.0)
+      dryml (= 2.0.0)
+      hobo_fields (= 2.0.0)
+      hobo_support (= 2.0.0)
       will_paginate (~> 3.0.0)
 
 GIT
@@ -93,7 +93,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bootstrap-datepicker-rails (0.6.42)
+    bootstrap-datepicker-rails (1.0.0)
       railties (>= 3.0)
     bootstrap-sass (2.3.0.1)
       sass (~> 3.2)
@@ -111,11 +111,11 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.4.0)
+    coffee-script-source (1.5.0)
     daemons (1.1.9)
     erubis (2.7.0)
-    eventmachine (1.0.0)
-    excon (0.18.5)
+    eventmachine (1.0.1)
+    excon (0.19.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fog (1.9.0)
@@ -131,14 +131,14 @@ GEM
     formatador (0.2.4)
     friendly_id (4.0.9)
     hike (1.2.1)
-    hobo_ckeditor (0.0.1)
+    hobo_ckeditor (0.0.12)
       ckeditor
-      hobo_fields
-      hobo_rapid
+      hobo (>= 2.0.0)
+      rails
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
-    i18n (0.6.1)
+    i18n (0.6.4)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
@@ -191,7 +191,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
-    rdoc (3.12.1)
+    rdoc (3.12.2)
       json (~> 1.4)
     ruby-hmac (0.4.0)
     sass (3.2.6)
@@ -225,6 +225,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ckeditor
   coffee-rails (~> 3.2.1)
   dryml!
   fog

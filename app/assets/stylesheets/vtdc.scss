@@ -284,7 +284,7 @@ form {
   margin-top: 0px;
 }
 
-.custom-page-contents{
+.static-page-contents{
   padding-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -296,7 +296,7 @@ form {
   }
 }
 
-.custom-page-header{
+.static-page-header{
   font-size: 25px;
   font-weight: heavy;
   text-shadow: darkgrey 0.08em 0.08em 0.1em;
@@ -353,4 +353,8 @@ form {
   border: none;
   border-radius: none;
   box-shadow: none;
+}
+
+.cktextarea {
+  width: 612px;
 }
