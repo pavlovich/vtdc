@@ -74,6 +74,10 @@
   </old-form>
 </extend>
 
+<extend tag="select-one">
+  <old-select-one: merge-attrs="&get_blank_message_opts" />
+</extend>
+
  <def tag="input" for="Paperclip::Attachment">
    <%= file_field_tag param_name_for_this, attributes %>
  </def>

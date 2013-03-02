@@ -85,12 +85,19 @@ module Vtdc
         :url => 'images.totaldoberman.com', #example: assets.blah.com
         :fog_credentials => {
             :provider=>'Google',
-            :google_storage_access_key_id=>'GOOG3Y2ZDDQCYASFB5DX',
-            :google_storage_secret_access_key=>'D3OYiJZv9Wnz3Oj9CqpEZ4rdAZai/KBPP1OSOcQ2'
-        },
+            :google_storage_access_key_id=>'GOOGSAS4BZ2ML56TOQ7L',
+            :google_storage_secret_access_key=>'WloJIDKFr1StFzjRY/Z3I9YwTn0au0LsKAEM3IBk'
+
+      #  :google_storage_access_key_id=>'GOOG3Y2ZDDQCYASFB5DX',
+      #  :google_storage_secret_access_key=>'D3OYiJZv9Wnz3Oj9CqpEZ4rdAZai/KBPP1OSOcQ2'
+
+
+    },
         :fog_public => true, #this must be set to true or ALL assets will be private by DEFAULT
-        :fog_host => 'http://images.totaldoberman.com', #example: http://assets.blah.com.commondatastorage.googleapis.com This can be changed to CDN
-        :fog_directory => 'images.totaldoberman.com' #example: assets.blah.com
+        :fog_host => 'http://photos.totaldoberman.com', #example: http://assets.blah.com.commondatastorage.googleapis.com This can be changed to CDN
+        :fog_directory => 'photos.totaldoberman.com' #example: assets.blah.com
+   #     :fog_host => 'http://images.totaldoberman.com', #example: http://assets.blah.com.commondatastorage.googleapis.com This can be changed to CDN
+   #     :fog_directory => 'images.totaldoberman.com' #example: assets.blah.com
     }
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)

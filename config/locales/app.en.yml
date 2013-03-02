@@ -2,7 +2,31 @@
 # e.g.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      custom_pages:
+        one: "Custom Page"
+        other: "Custom Pages"
+
+    attributes:
+      custom_page:
+            menu_title: "Menu Label"
+            title: "Title"
+            description: "Description"
+            contents: "Content"
+            display_children_on_side_menu: "Sidebar Menu?"
+            display_children_as_dropdown_menu: "Pull-down Menu?"
+            visible_to_public: "Publicly Visible?"
+            slug: "Name in URL"
+
+    messages:
+      custom_page:
+        none: "Please select"
+
+  custom_page:
+      parent_page:
+        messages:
+          none: "Select parent page if desired ..."
 
 #  attributes:
 #    created_at: Created at

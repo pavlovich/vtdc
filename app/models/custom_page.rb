@@ -8,7 +8,7 @@ class CustomPage < ActiveRecord::Base
     menu_title                        :string
     title                             :string
     description                       :string
-    contents                          :cktext, {:x => 'y'}
+    contents                          :cktext
     display_children_on_side_menu     :boolean
     display_children_as_dropdown_menu :boolean
     visible_to_public                 :boolean
