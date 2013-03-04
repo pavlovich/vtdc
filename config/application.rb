@@ -24,7 +24,7 @@ module Vtdc
     end
 
     # Hobo: Named routes have changed in Hobo 2.0.   Set to false to emit both the 2.0 and 1.3 names.
-    config.hobo.dont_emit_deprecated_routes = true
+    config.hobo.dont_emit_deprecated_routes = false
     # Hobo: the public subsite loads public.css & public.js
     config.assets.precompile += %w(public.css public.js)
     config.assets.precompile += %w(vtdc.css)
@@ -82,7 +82,7 @@ module Vtdc
     config.paperclip_defaults = {
         :path => "images/:class/:id/:attachment/:style/img_:fingerprint",
         :storage => :fog,
-        :url => 'images.totaldoberman.com', #example: assets.blah.com
+        :url => 'photos.totaldoberman.com', #example: assets.blah.com
         :fog_credentials => {
             :provider=>'Google',
             :google_storage_access_key_id=>'GOOGSAS4BZ2ML56TOQ7L',

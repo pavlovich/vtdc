@@ -31,7 +31,7 @@
 <def tag="card" for="Member">
   <card class="member" param="default" merge>
     <header: param>
-      <h4 param="heading"><a><name/></a></h4>
+      <h4 param="heading"><name/></h4>
     </header:>
   </card>
 </def>
@@ -39,7 +39,7 @@
 <def tag="card" for="Photo">
   <card class="photo" param="default" merge>
     <header: param>
-      <h4 param="heading"><a><name/></a></h4>
+      <h4 param="heading"><name/></h4>
     </header:>
   </card>
 </def>
@@ -55,7 +55,7 @@
 <def tag="card" for="UserProfile">
   <card class="user-profile" param="default" merge>
     <header: param>
-      <h4 param="heading"><a><name/></a></h4>
+      <h4 param="heading"><name/></h4>
     </header:>
   </card>
 </def>
