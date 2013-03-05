@@ -54,6 +54,7 @@ gem 'jquery-rails'
 # gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
 gem 'hobo', :git => "https://github.com/pavlovich/hobo.git"
 gem 'dryml', :git => "https://github.com/pavlovich/hobo.git"
+gem 'hobo_support', :git => "https://github.com/pavlovich/hobo.git"
 # gem 'hobo', :path => "/Users/pavlovich/projects/opensource/hobo"
 gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
 
