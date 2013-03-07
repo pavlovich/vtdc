@@ -1,6 +1,6 @@
 class Ckeditor::Asset < ActiveRecord::Base
 
-    hobo_model
+  hobo_model
 
   include Ckeditor::Orm::ActiveRecord::AssetBase
   include Ckeditor::Backend::Paperclip

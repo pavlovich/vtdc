@@ -16,7 +16,16 @@ class CustomPage < ActiveRecord::Base
     timestamps
   end
 
+  before_save :create_snapshot
+  after_save :cleanup_snapshot_temp_file
+
   attr_accessible :menu_title, :title, :description, :contents, :display_children_on_side_menu, :display_children_as_dropdown_menu, :visible_to_public, :parent_page_id, :parent_page
+
+  has_attached_file :snapshot,  :styles => {
+      :thumb=> "100x100#",
+      :small  => "150x150>",
+      :medium => "300x300>",
+      :slide => "540x420" }
 
   has_many :child_pages, :class_name => "CustomPage", :foreign_key => "parent_page_id"
   belongs_to :parent_page, :class_name => "CustomPage"
@@ -52,6 +61,22 @@ class CustomPage < ActiveRecord::Base
   def top_menu_label
     return parent_page.top_menu_label unless !has_parent_page?
     return menu_title
+  end
+
+  def create_snapshot()
+    html  = self.contents
+    kit   = IMGKit.new(html)
+    img   = kit.to_img(:png)
+    file  = Tempfile.new(["template_#{UUIDTools::UUID.timestamp_create}", 'png'], 'tmp',
+                         :encoding => 'ascii-8bit')
+    file.write(img)
+    file.flush
+    self.snapshot = file
+    @my_temp_file = file
+  end
+
+  def cleanup_snapshot_temp_file
+    @my_temp_file.unlink
   end
 
   # --- Permissions --- #
