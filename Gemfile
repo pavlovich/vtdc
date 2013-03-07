@@ -49,7 +49,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 # gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
 gem 'hobo', :git => "https://github.com/pavlovich/hobo.git"
@@ -75,6 +75,6 @@ gem 'fog'
 gem 'ckeditor'
 gem 'hobo_ckeditor'
 gem 'friendly_id'
-gem 'uuidtools'
-gem 'imgkit'
+#gem 'uuidtools'
+#gem 'imgkit'
 

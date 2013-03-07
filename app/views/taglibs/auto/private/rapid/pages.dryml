@@ -97,7 +97,7 @@
 
     <content-body: param>
       <view:description param="description" />
-      <field-list fields="menu_title, contents, slug, snapshot_file_name, snapshot_content_type, snapshot_file_size, snapshot_updated_at, parent_page" param/>
+      <field-list fields="menu_title, contents, slug, parent_page" param/>
     </content-body:>
 
   </page>

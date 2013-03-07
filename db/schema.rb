@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305042251) do
+ActiveRecord::Schema.define(:version => 20130307211406) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name"
@@ -42,10 +42,6 @@ ActiveRecord::Schema.define(:version => 20130305042251) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_page_id"
-    t.string   "snapshot_file_name"
-    t.string   "snapshot_content_type"
-    t.integer  "snapshot_file_size"
-    t.datetime "snapshot_updated_at"
   end
 
   add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"

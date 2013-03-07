@@ -18,8 +18,7 @@ class CustomPage < ActiveRecord::Base
 
   attr_accessible :menu_title, :title, :description, :contents, :display_children_on_side_menu, :display_children_as_dropdown_menu, :visible_to_public, :parent_page_id, :parent_page
 
-  has_attached_file :snapshot,  :styles => {
-      :medium => "300x300>"}
+  #has_attached_file :snapshot,  :styles => {:medium => "300x300>"}
 
   has_many :child_pages, :class_name => "CustomPage", :foreign_key => "parent_page_id"
   belongs_to :parent_page, :class_name => "CustomPage"
