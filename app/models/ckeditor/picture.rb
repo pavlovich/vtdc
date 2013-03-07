@@ -4,7 +4,6 @@ class Ckeditor::Picture < Ckeditor::Asset
                     :path => "ckeditor_assets/pictures/:id/:style_:basename.:extension",
                     :styles => {
                         :thumb=> "100x100#",
-                        :small  => "150x150>",
                         :content => "300x300>",
                         :slide => "540x420" }
 

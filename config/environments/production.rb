@@ -88,4 +88,8 @@ Vtdc::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
+  IMGKit.configure do |config|
+    config.wkhtmltoimage = Rails.root.join('bin', 'wkhtmltoimage-amd64').to_s
+  end
+
 end

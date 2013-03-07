@@ -1,0 +1,33 @@
+<page merge-attrs="&@custom_attributes">
+  <prepend-container:>
+<!--    <custom-page-top-menu if="&@custom_page.show_top_menu?" />  -->
+  </prepend-container:>
+  <aside:>
+      <custom-page-aside  />
+  </aside:>
+  <content-header:>
+    <div class="static-page-header">
+    <%= raw @custom_page.title %>
+    </div>
+  </content-header:>
+  <content-body:>
+    <div class="static-page-contents">
+    <%= raw @custom_page.contents %>
+    </div>
+  </content-body:>
+</page>
+
+        <!DOCTYPE html>
+<html>
+<head>
+  <title>Vtdc</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= yield %>
+
+</body>
+</html>
