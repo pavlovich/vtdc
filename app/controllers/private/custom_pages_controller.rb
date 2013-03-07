@@ -30,14 +30,15 @@ class Private::CustomPagesController < Private::PrivateSiteController
     model=CustomPage.find(params[:id])
     #html=render_to_string({:template => "private/custom_pages/show_custom_content"})
     #kit=IMGKit.new(html)
-    kit=IMGKit.new("http://www.totaldoberman.com/static/" + model.slug)
-    img=kit.to_img(:png)
-    file=Tempfile.new(["custom_page_#{model.id}_snapshot",'png'],'tmp',:encoding=>'ascii-8bit')
-    file.write(img)
-    file.flush
-    model.snapshot=file
+    #kit=IMGKit.new("http://www.totaldoberman.com/static/" + model.slug)
+    #img=kit.to_img(:png)
+    #file=Tempfile.new(["custom_page_#{model.id}_snapshot",'png'],'tmp',:encoding=>'ascii-8bit')
+    #file.write(img)
+    #file.flush
+    #model.snapshot=file
+    model.snapshot=nil
     model.save
-    file.unlink
+    #file.unlink
   end
 
 
