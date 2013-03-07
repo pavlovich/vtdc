@@ -32,7 +32,7 @@ class Private::CustomPagesController < Private::PrivateSiteController
     #kit=IMGKit.new(html)
     kit=IMGKit.new("http://www.totaldoberman.com/static/" + model.slug)
     img=kit.to_img(:png)
-    file=Tempfile.new(["custom_page_#{model.id}_snapshot" + DateTime.current.to_s,'png'],'tmp',:encoding=>'ascii-8bit')
+    file=Tempfile.new(["custom_page_#{model.id}_snapshot",'png'],'tmp',:encoding=>'ascii-8bit')
     file.write(img)
     file.flush
     model.snapshot=file
