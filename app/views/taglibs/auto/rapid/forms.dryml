@@ -69,15 +69,3 @@
   </form>
 </def>
 
-<def tag="form" for="UserProfile">
-  <form merge param="default">
-    <error-messages param/>
-    <field-list fields="bio, publish_date" param/>
-    <div param="actions">
-      <submit label="#{ht 'user_profile.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
-    </div>
-  </form>
-</def>
-
-
-

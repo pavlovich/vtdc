@@ -29,10 +29,6 @@ Vtdc::Application.routes.draw do
   get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
   match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
 
-
-  # Resource routes for controller user_profiles
-  resources :user_profiles, :only => [:show, :update, :destroy]
-
   namespace :private do
 
 
@@ -55,10 +51,6 @@ Vtdc::Application.routes.draw do
     match 'member_login(.:format)' => 'members#login', :as => 'member_login'
     get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
     match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
-
-
-    # Resource routes for controller private/user_profiles
-    resources :user_profiles
 
   end
 
@@ -108,12 +100,6 @@ Vtdc::Application.routes.draw do
   put 'members/:id(.:format)' => 'members#update', :as => 'update_member', :constraints => { :id => %r([^/.?]+) }
   delete 'members/:id(.:format)' => 'members#destroy', :as => 'destroy_member', :constraints => { :id => %r([^/.?]+) }
 
-
-  # DEPRECATED Resource routes for controller user_profiles
-  get 'user_profiles/:id(.:format)' => 'user_profiles#show', :as => 'user_profile', :constraints => { :id => %r([^/.?]+) }
-  put 'user_profiles/:id(.:format)' => 'user_profiles#update', :as => 'update_user_profile', :constraints => { :id => %r([^/.?]+) }
-  delete 'user_profiles/:id(.:format)' => 'user_profiles#destroy', :as => 'destroy_user_profile', :constraints => { :id => %r([^/.?]+) }
-
   namespace :private do
 
 
@@ -142,16 +128,6 @@ Vtdc::Application.routes.draw do
     post 'members(.:format)' => 'members#create', :as => 'create_member'
     put 'members/:id(.:format)' => 'members#update', :as => 'update_member', :constraints => { :id => %r([^/.?]+) }
     delete 'members/:id(.:format)' => 'members#destroy', :as => 'destroy_member', :constraints => { :id => %r([^/.?]+) }
-
-
-    # DEPRECATED Resource routes for controller private/user_profiles
-    get 'user_profiles(.:format)' => 'user_profiles#index', :as => 'user_profiles'
-    get 'user_profiles/new(.:format)' => 'user_profiles#new', :as => 'new_user_profile'
-    get 'user_profiles/:id/edit(.:format)' => 'user_profiles#edit', :as => 'edit_user_profile'
-    get 'user_profiles/:id(.:format)' => 'user_profiles#show', :as => 'user_profile', :constraints => { :id => %r([^/.?]+) }
-    post 'user_profiles(.:format)' => 'user_profiles#create', :as => 'create_user_profile'
-    put 'user_profiles/:id(.:format)' => 'user_profiles#update', :as => 'update_user_profile', :constraints => { :id => %r([^/.?]+) }
-    delete 'user_profiles/:id(.:format)' => 'user_profiles#destroy', :as => 'destroy_user_profile', :constraints => { :id => %r([^/.?]+) }
 
   end
 
