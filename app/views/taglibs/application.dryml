@@ -206,7 +206,7 @@
       <div class="form-horizontal">
         <field-list: fields="menu_title, contents, slug, parent_page">
           <contents-view: replace>
-            <iframe src="&public_custom_page(@custom_page)" width="100%" height="500px">
+            <iframe src="http://www.totaldoberman.com/static/#{@custom_page.slug}" width="100%" height="500px">
               <p>Placeholder text; only shows up if the page DOESN'T render!</p>
             </iframe>
           </contents-view:>
