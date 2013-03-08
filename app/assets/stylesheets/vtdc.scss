@@ -125,6 +125,8 @@ body {
 
   #my-account-nav {
     width: auto;
+    padding: 5px;
+    border: 2px inset lightgreen;
   }
 
   .nav > li > a{
@@ -385,4 +387,18 @@ input.delete-custom-page-button:hover{
     clear: both;
     margin-left: 2%;
 
+}
+
+#motto {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bolder;
+  font-style: italic;
+  text-tranxxsform: uppercase;
+  font-size: 18px;
+  color: #62040c;
+  padding: 10px;
+  border: 2px outset palegoldenrod;
+  background-color: #edeacc;
+  text-shadow: #f8a9a0 0.08em 0.08em 0.01em;
 }

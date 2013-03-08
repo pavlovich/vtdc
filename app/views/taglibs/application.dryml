@@ -56,9 +56,11 @@
                             </div>
                         </div>
                     </div>
-                    <div id='user-changer'>
+                    <div id='user-changer' if='&false'>
                         <vtdc-dev-user-changer />
                     </div>
+                    <div id="motto" if='&true'>The Total Doberman &nbsp;&nbsp; = &nbsp;&nbsp; Health + Temperament + Structure</div>
+
                 </div>
             </div>
         </prepend-body>
