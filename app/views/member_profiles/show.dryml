@@ -1,5 +1,5 @@
 <show-page>
     <field-list: replace >
-    <%= raw @user_profile.bio %>hello
+    <%= raw @member_profile.bio %>
     </field-list:>
 </show-page>

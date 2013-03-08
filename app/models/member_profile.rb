@@ -6,7 +6,9 @@ class MemberProfile < ActiveRecord::Base
     bio :cktext
     timestamps
   end
-  attr_accessible :bio
+  attr_accessible :bio, :member, :member_id
+
+  belongs_to :member
 
   # --- Permissions --- #
 

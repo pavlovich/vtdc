@@ -10,6 +10,8 @@ class Member < ActiveRecord::Base
   end
   attr_accessible :name, :email_address, :password, :password_confirmation
 
+  has_one :member_profile
+
   #def self.attr_order
   #  return [:caption, :public, :photo]
   #end

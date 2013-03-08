@@ -13,6 +13,10 @@ Vtdc::Application.routes.draw do
   resources :events
 
 
+  # Resource routes for controller member_profiles
+  resources :member_profiles
+
+
   # Resource routes for controller members
   resources :members, :only => [:edit, :show, :create, :update, :destroy] do
     member do
@@ -82,6 +86,16 @@ Vtdc::Application.routes.draw do
   post 'events(.:format)' => 'events#create', :as => 'create_event'
   put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
   delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
+
+  # DEPRECATED Resource routes for controller member_profiles
+  get 'member_profiles(.:format)' => 'member_profiles#index', :as => 'member_profiles'
+  get 'member_profiles/new(.:format)' => 'member_profiles#new', :as => 'new_member_profile'
+  get 'member_profiles/:id/edit(.:format)' => 'member_profiles#edit', :as => 'edit_member_profile'
+  get 'member_profiles/:id(.:format)' => 'member_profiles#show', :as => 'member_profile', :constraints => { :id => %r([^/.?]+) }
+  post 'member_profiles(.:format)' => 'member_profiles#create', :as => 'create_member_profile'
+  put 'member_profiles/:id(.:format)' => 'member_profiles#update', :as => 'update_member_profile', :constraints => { :id => %r([^/.?]+) }
+  delete 'member_profiles/:id(.:format)' => 'member_profiles#destroy', :as => 'destroy_member_profile', :constraints => { :id => %r([^/.?]+) }
 
 
   # DEPRECATED Lifecycle routes for controller members

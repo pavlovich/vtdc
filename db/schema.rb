@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308221503) do
+ActiveRecord::Schema.define(:version => 20130308230646) do
 
   create_table "calendars", :force => true do |t|
     t.string   "name"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(:version => 20130308221503) do
     t.datetime "updated_at"
   end
 
+  create_table "member_profiles", :force => true do |t|
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "member_id"
+  end
+
+  add_index "member_profiles", ["member_id"], :name => "index_member_profiles_on_member_id"
+
   create_table "members", :force => true do |t|
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40
@@ -78,10 +87,5 @@ ActiveRecord::Schema.define(:version => 20130308221503) do
   end
 
   add_index "members", ["state"], :name => "index_members_on_state"
-
-  create_table "profilesubls", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

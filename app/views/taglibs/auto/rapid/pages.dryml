@@ -8,6 +8,7 @@
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Calendar"><ht key="calendar.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&MemberProfile"><ht key="member_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -226,6 +227,118 @@
         </ht>
       </h2>
       <delete-button label="#{ht 'event.actions.delete', :default=>['Remove This Event']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== MemberProfile Pages ====== -->
+
+<def tag="index-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="member_profile.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="member_profile.actions.new">New Member profile</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.new.title', :default=>[' New Member profile'] }">
+    <body: class="new-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.new.heading">
+          New Member profile
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'member_profile.actions.create', :default=>['Create Member profile']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.show.title', :default=>['Member profile'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.show.heading" name="#{name(:no_wrapper => true)}">
+          Member profile <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="member_profile.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Member profile
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="bio, member" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.edit.title', :default=>['Edit Member profile'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Member profile
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'member_profile.actions.delete', :default=>['Remove This Member profile']}" param/>
     </content-header:>
 
     <content-body: param>

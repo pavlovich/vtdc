@@ -25,6 +25,18 @@
 
 
 
+<def tag="form" for="MemberProfile">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="bio, member" param/>
+    <div param="actions">
+      <submit label="#{ht 'member_profile.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Member">
   <form merge param="default">
     <error-messages param/>

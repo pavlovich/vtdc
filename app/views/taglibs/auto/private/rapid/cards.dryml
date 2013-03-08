@@ -39,8 +39,8 @@
   </card>
 </def>
 
-<def tag="card" for="Profilesubl">
-  <card class="profilesubl" param="default" merge>
+<def tag="card" for="MemberProfile">
+  <card class="member-profile" param="default" merge>
     <header: param>
       <h4 param="heading"><name/></h4>
     </header:>
