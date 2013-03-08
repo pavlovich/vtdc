@@ -4,7 +4,7 @@
 <def tag="form" for="Member">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="" param/>
+    <field-list fields="name, email_address, administrator, state" param/>
     <div param="actions">
       <submit label="#{ht 'member.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -48,7 +48,7 @@
 <def tag="form" for="Photo">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="" param/>
+    <field-list fields="caption, public" param/>
     <div param="actions">
       <submit label="#{ht 'photo.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -60,7 +60,7 @@
 <def tag="form" for="UserProfile">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="" param/>
+    <field-list fields="bio, publish_date" param/>
     <div param="actions">
       <submit label="#{ht 'user_profile.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
