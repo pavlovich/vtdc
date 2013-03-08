@@ -10,6 +10,10 @@ class Member < ActiveRecord::Base
   end
   attr_accessible :name, :email_address, :password, :password_confirmation
 
+  #def self.attr_order
+  #  return [:caption, :public, :photo]
+  #end
+
   # This gives private rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
   before_create do |user|

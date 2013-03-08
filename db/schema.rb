@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308003923) do
+ActiveRecord::Schema.define(:version => 20130308192631) do
+
+  create_table "calendars", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name"
@@ -45,6 +52,16 @@ ActiveRecord::Schema.define(:version => 20130308003923) do
   end
 
   add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "all_day"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "members", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

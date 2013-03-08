@@ -5,6 +5,14 @@
 Vtdc::Application.routes.draw do
 
 
+  # Resource routes for controller calendars
+  resources :calendars
+
+
+  # Resource routes for controller events
+  resources :events
+
+
   # Resource routes for controller members
   resources :members, :only => [:edit, :show, :create, :update, :destroy] do
     member do
@@ -71,6 +79,26 @@ Vtdc::Application.routes.draw do
 
  
  
+
+  # DEPRECATED Resource routes for controller calendars
+  get 'calendars(.:format)' => 'calendars#index', :as => 'calendars'
+  get 'calendars/new(.:format)' => 'calendars#new', :as => 'new_calendar'
+  get 'calendars/:id/edit(.:format)' => 'calendars#edit', :as => 'edit_calendar'
+  get 'calendars/:id(.:format)' => 'calendars#show', :as => 'calendar', :constraints => { :id => %r([^/.?]+) }
+  post 'calendars(.:format)' => 'calendars#create', :as => 'create_calendar'
+  put 'calendars/:id(.:format)' => 'calendars#update', :as => 'update_calendar', :constraints => { :id => %r([^/.?]+) }
+  delete 'calendars/:id(.:format)' => 'calendars#destroy', :as => 'destroy_calendar', :constraints => { :id => %r([^/.?]+) }
+
+
+  # DEPRECATED Resource routes for controller events
+  get 'events(.:format)' => 'events#index', :as => 'events'
+  get 'events/new(.:format)' => 'events#new', :as => 'new_event'
+  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
+  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
+  post 'events(.:format)' => 'events#create', :as => 'create_event'
+  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
+  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
 
   # DEPRECATED Lifecycle routes for controller members
   put 'members/:id/accept_invitation(.:format)' => 'members#do_accept_invitation', :as => 'do_member_accept_invitation'

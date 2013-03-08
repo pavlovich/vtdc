@@ -28,6 +28,13 @@ module Vtdc
     # Hobo: the public subsite loads public.css & public.js
     config.assets.precompile += %w(public.css public.js)
     config.assets.precompile += %w(vtdc.css)
+    config.assets.precompile += %w(fullcalendar.css fullcalendar.print.css)
+    config.assets.precompile += %w(calendar.js fullcalendar.js gcal.js jquery.rest.js)
+
+    # Added by the Rails 3 jQuery Template
+    # http://github.com/lleger/Rails-3-jQuery, written by Logan Leger
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:cdn] = %w(https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js rails)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

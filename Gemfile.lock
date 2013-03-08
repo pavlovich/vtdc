@@ -138,6 +138,7 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     friendly_id (4.0.9)
+    fullcalendar-rails (1.5.4.0)
     hike (1.2.1)
     hobo_ckeditor (0.0.12)
       ckeditor
@@ -239,6 +240,7 @@ DEPENDENCIES
   dryml!
   fog
   friendly_id
+  fullcalendar-rails
   hobo!
   hobo_bootstrap!
   hobo_bootstrap_ui!

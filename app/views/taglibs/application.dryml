@@ -56,11 +56,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id='user-changer' if='&false'>
+                    <div id='user-changer' if='&Rails.env.development?'>
                         <vtdc-dev-user-changer />
                     </div>
-                    <div id="motto" if='&true'>The Total Doberman &nbsp;&nbsp; = &nbsp;&nbsp; Health + Temperament + Structure</div>
-
+                    <div id="motto" if='&!Rails.env.development?'>The Total Doberman &nbsp;&nbsp; = &nbsp;&nbsp; Health + Temperament + Structure</div>
                 </div>
             </div>
         </prepend-body>

@@ -1,0 +1,7 @@
+<index-page>
+  <content: replace>
+<%= link_to "new event", new_event_path %>
+
+<div id='calendar'></div>
+  </content:>
+</index-page>

@@ -77,4 +77,5 @@ gem 'hobo_ckeditor'
 gem 'friendly_id'
 #gem 'uuidtools'
 #gem 'imgkit'
+gem 'fullcalendar-rails'
 

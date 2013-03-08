@@ -390,7 +390,7 @@ input.delete-custom-page-button:hover{
 }
 
 #motto {
-  margin-top: 20px;
+  margin-top: 17px;
   text-align: center;
   font-weight: bolder;
   font-style: italic;
@@ -401,4 +401,9 @@ input.delete-custom-page-button:hover{
   border: 2px outset palegoldenrod;
   background-color: #edeacc;
   text-shadow: #f8a9a0 0.08em 0.08em 0.01em;
+}
+
+#calendar {
+  width: 900px;
+  margin: 0 auto;
 }

@@ -8,5 +8,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.rest.js
 //= require ckeditor/init
 //= require_tree ./application
+//= require calendar.js
+//= require fullcalendar.js
+//= require gcal.js
+
+$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Accept", "text/javascript");
+    }
+});

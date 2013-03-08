@@ -1,5 +1,9 @@
 Vtdc::Application.routes.draw do
 
+ # resources :eventsx
+
+ # get "calendar/index"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   match ENV['RAILS_RELATIVE_URL_ROOT'] => 'public#index' if ENV['RAILS_RELATIVE_URL_ROOT']
