@@ -6,6 +6,8 @@ class Private::CustomPagesController < Private::PrivateSiteController
 
   auto_actions :all
 
+
+
   #def hobo_create(*args, &b)
   #  super
   #  save_snapshot

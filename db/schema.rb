@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307211406) do
+ActiveRecord::Schema.define(:version => 20130308003923) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name"
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(:version => 20130307211406) do
     t.text     "contents"
     t.boolean  "display_children_on_side_menu"
     t.boolean  "display_children_as_dropdown_menu"
-    t.boolean  "visible_to_public"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_page_id"
+    t.boolean  "publicly_visible"
   end
 
   add_index "custom_pages", ["parent_page_id"], :name => "index_custom_pages_on_parent_page_id"

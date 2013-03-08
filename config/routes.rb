@@ -14,7 +14,7 @@ Vtdc::Application.routes.draw do
 
   match 'search' => 'public#search', :as => 'site_search'
 
-  match '/static/:id' => 'static#show_custom_content'
+  match '/static/:id' => 'static#show_custom_content', :as => 'public_custom_page'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

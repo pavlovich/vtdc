@@ -11,12 +11,12 @@ class CustomPage < ActiveRecord::Base
     contents                          :cktext
     display_children_on_side_menu     :boolean
     display_children_as_dropdown_menu :boolean
-    visible_to_public                 :boolean
+    publicly_visible                  :boolean
     slug                              :string
     timestamps
   end
 
-  attr_accessible :menu_title, :title, :description, :contents, :display_children_on_side_menu, :display_children_as_dropdown_menu, :visible_to_public, :parent_page_id, :parent_page
+  attr_accessible :menu_title, :title, :description, :contents, :display_children_on_side_menu, :display_children_as_dropdown_menu, :publicly_visible, :parent_page_id, :parent_page
 
   #has_attached_file :snapshot,  :styles => {:medium => "300x300>"}
 
@@ -26,6 +26,13 @@ class CustomPage < ActiveRecord::Base
   friendly_id :menu_title, use: :slugged
 
   scope :top_level_pages, where("parent_page_id IS NULL")
+
+  def self.visible_top_level_pages_for(a_user)
+    return top_level_pages unless a_user.guest?
+    top_level_pages.select do |item|
+      item.publicly_visible?
+    end
+  end
 
   def aside_position
     'left'
@@ -56,6 +63,13 @@ class CustomPage < ActiveRecord::Base
     return menu_title
   end
 
+  def visible_child_pages_for(a_user)
+    return child_pages unless a_user.guest?
+    child_pages.select do |item|
+      item.publicly_visible?
+    end
+  end
+
   # --- Permissions --- #
 
   def create_permitted?
@@ -71,7 +85,7 @@ class CustomPage < ActiveRecord::Base
   end
 
   def view_permitted?(field)
-    true
+    publicly_visible? || !acting_user.guest?
   end
 
 end

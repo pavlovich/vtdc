@@ -2,6 +2,13 @@ class StaticController < ApplicationController
 
   hobo_controller
 
+  before_filter :is_publicly_visible?
+
+  def is_publicly_visible?
+    custom_page = CustomPage.find(params[:id])
+    render :error_page unless custom_page.publicly_visible? || !current_user.guest?
+  end
+
   def show_custom_content()
     begin
       @custom_page = CustomPage.find(params[:id])
