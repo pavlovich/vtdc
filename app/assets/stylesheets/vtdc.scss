@@ -363,7 +363,8 @@ form {
 
 .delete-custom-page-button {
   margin-right: 148px;
-  float:right;
+  margin-top: -34px;
+  float: right;
   clear: none;
   color: whitesmoke;
   text-shadow: black 0.08em 0.08em 0.05em;
@@ -371,6 +372,27 @@ form {
 }
 
 input.delete-custom-page-button:hover{
+  margin-right: 148px;
+  margin-top: -34px;
+  color: white;
+  float: right;
+  text-shadow: black 0.08em 0.08em 0.05em;
+  background-image:	none;
+  background-color: #d90000;
+}
+
+.form-horizontal input.delete-button {
+    margin-right: 148px;
+    margin-top: -34px;
+    float:right;
+    clear: none;
+    color: whitesmoke;
+    text-shadow: black 0.08em 0.08em 0.05em;
+    background-image:	linear-gradient(#ff8082,#FF0000);
+}
+
+.form-horizontal input.delete-button:hover {
+  margin-top: -34px;
   color: white;
   text-shadow: black 0.08em 0.08em 0.05em;
   background-image:	none;
@@ -429,6 +451,14 @@ input.delete-custom-page-button:hover{
   margin-right: 180px;
   float: right;
   clear:both;
+}
+
+.starts-at-field .controls select{
+  width: auto;
+}
+
+.ends-at-field .controls select{
+  width: auto;
 }
 
 /* css for timepicker */
