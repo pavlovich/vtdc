@@ -49,12 +49,14 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+#gem 'debugger'
+#gem 'ruby-debug-base19x'
 
 # gem 'hobo', :git => "https://github.com/Hobo/hobo.git"
 gem 'hobo', :git => "https://github.com/pavlovich/hobo.git"
 gem 'dryml', :git => "https://github.com/pavlovich/hobo.git"
 gem 'hobo_support', :git => "https://github.com/pavlovich/hobo.git"
+gem 'hobo_fields', :git => "https://github.com/pavlovich/hobo.git"
 # gem 'hobo', :path => "/Users/pavlovich/projects/opensource/hobo"
 gem "hobo_jquery_ui", :git => "https://github.com/Hobo/hobo.git"
 
@@ -78,4 +80,5 @@ gem 'friendly_id'
 #gem 'uuidtools'
 #gem 'imgkit'
 gem 'fullcalendar-rails'
+gem 'bootstrap-datepicker-rails'
 

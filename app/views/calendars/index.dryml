@@ -1,7 +1,13 @@
 <index-page>
   <content: replace>
-<%= link_to "new event", new_event_path %>
-
-<div id='calendar'></div>
+    <%= link_to "new event", new_event_path, :class => "new-event-button btn btn-primary" %>
+    <div class="calendar-holder">
+      <div id='calendar'></div>
+    </div>
+    <script>
+      $(document).ready(function() {
+      $('#calendar').windowResize();
+      })
+    </script>
   </content:>
 </index-page>

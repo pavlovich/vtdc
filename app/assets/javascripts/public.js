@@ -15,3 +15,11 @@
 //= require hobo_bootstrap_ui
 //= require hobo_ckeditor
 //= require_tree ./public
+
+$(document).ready(function() {
+    $('.xxx').timepicker({
+    controlType: 'select',
+    timeFormat: 'hh:mm tt',
+    showTime: true
+});
+})

@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: https://github.com/pavlovich/hobo.git
-  revision: 0a13e47044c63e7e9d4cf101c74b5b2ad6ac2392
+  revision: e21c0893a5752332888bde2c4b4b51716b3647bc
   specs:
     dryml (2.0.0)
       actionpack (~> 3.2.0)
@@ -93,7 +93,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bootstrap-datepicker-rails (1.0.0)
+    bootstrap-datepicker-rails (1.0.0.1)
       railties (>= 3.0)
     bootstrap-sass (2.3.0.1)
       sass (~> 3.2)
@@ -112,18 +112,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-    columnize (0.3.6)
     daemons (1.1.9)
-    debugger (1.4.0)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.2.0)
-    debugger-linecache (1.1.2)
-      debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.2.0)
     erubis (2.7.0)
-    eventmachine (1.0.1)
-    excon (0.19.5)
+    eventmachine (1.0.3)
+    excon (0.20.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fog (1.9.0)
@@ -140,7 +132,7 @@ GEM
     friendly_id (4.0.9)
     fullcalendar-rails (1.5.4.0)
     hike (1.2.1)
-    hobo_ckeditor (0.0.12)
+    hobo_ckeditor (0.0.13)
       ckeditor
       hobo (>= 2.0.0)
       rails
@@ -203,7 +195,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ruby-hmac (0.4.0)
-    sass (3.2.6)
+    sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -234,9 +226,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datepicker-rails
   ckeditor
   coffee-rails (~> 3.2.1)
-  debugger
   dryml!
   fog
   friendly_id

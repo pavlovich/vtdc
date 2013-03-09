@@ -4,8 +4,10 @@
  * included in all subsites.  This file is included by front.css and all
  * subsites.
  *
+ * require fullcalendar.print.css
+ *
  *= require_self
  *= require_tree ./application
  *= require fullcalendar.css
- *= require fullcalendar.print.css
+ *= require jquery-ui-timepicker-addon.css
 */

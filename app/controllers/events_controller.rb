@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @events = Event.scoped
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-
+    @events = @events.paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }

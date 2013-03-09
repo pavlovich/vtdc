@@ -81,3 +81,15 @@
   </form>
 </def>
 
+<def tag="form" for="Position">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, description" param/>
+    <div param="actions">
+      <submit label="#{ht 'position.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+

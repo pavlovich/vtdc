@@ -180,9 +180,6 @@
             <aside-custom-page-menu with="&@custom_page" />
         </ul>
     </div>
-
-    
-    
 </def>
 
 <def tag="custom-page-top-menu">
@@ -217,3 +214,15 @@
     </content-body:>
   </old-show-page>
 </extend>
+
+<!--<def tag="input" for="datetime">-->
+  <!--<%= text_field_tag "#{this_field}", "#{this}", :class => "xxx" %>-->
+<!--</def>-->
+
+<!--<def tag="editor" for="datetime">-->
+<!--<%= text_field_tag '&field_name', "&this", :class => "datetimepicker" %>-->
+<!--</def>-->
+
+<!--<def tag="input" for="Date">-->
+  <!--<datepicker dateFormat="yy-mm-dd" merge />-->
+<!--</def>-->

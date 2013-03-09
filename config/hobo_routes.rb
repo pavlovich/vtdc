@@ -33,6 +33,10 @@ Vtdc::Application.routes.draw do
   get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
   match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
 
+
+  # Resource routes for controller positions
+  resources :positions
+
   namespace :private do
 
 
@@ -113,6 +117,16 @@ Vtdc::Application.routes.draw do
   post 'members(.:format)' => 'members#create', :as => 'create_member'
   put 'members/:id(.:format)' => 'members#update', :as => 'update_member', :constraints => { :id => %r([^/.?]+) }
   delete 'members/:id(.:format)' => 'members#destroy', :as => 'destroy_member', :constraints => { :id => %r([^/.?]+) }
+
+
+  # DEPRECATED Resource routes for controller positions
+  get 'positions(.:format)' => 'positions#index', :as => 'positions'
+  get 'positions/new(.:format)' => 'positions#new', :as => 'new_position'
+  get 'positions/:id/edit(.:format)' => 'positions#edit', :as => 'edit_position'
+  get 'positions/:id(.:format)' => 'positions#show', :as => 'position', :constraints => { :id => %r([^/.?]+) }
+  post 'positions(.:format)' => 'positions#create', :as => 'create_position'
+  put 'positions/:id(.:format)' => 'positions#update', :as => 'update_position', :constraints => { :id => %r([^/.?]+) }
+  delete 'positions/:id(.:format)' => 'positions#destroy', :as => 'destroy_position', :constraints => { :id => %r([^/.?]+) }
 
   namespace :private do
 

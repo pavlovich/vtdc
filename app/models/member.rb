@@ -8,9 +8,11 @@ class Member < ActiveRecord::Base
     administrator :boolean, :default => false
     timestamps
   end
-  attr_accessible :name, :email_address, :password, :password_confirmation
+  attr_accessible :name, :email_address, :password, :password_confirmation, :positions
 
   has_one :member_profile
+
+  has_and_belongs_to_many :positions
 
   #def self.attr_order
   #  return [:caption, :public, :photo]
@@ -47,7 +49,10 @@ class Member < ActiveRecord::Base
     end
 
     transition :accept_invitation, { :invited => :active }, :available_to => :key_holder,
-               :params => [ :password, :password_confirmation ]
+               :params => [ :password, :password_confirmation ] do
+      self.member_profile = MemberProfile.create
+      self.save
+    end
 
     transition :request_password_reset, { :active => :active }, :new_key => true do
       MemberMailer.forgot_password(self, lifecycle.key).deliver

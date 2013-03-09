@@ -10,14 +10,18 @@ en:
 
     attributes:
       custom_page:
-            menu_title: "Menu Label"
-            title: "Title"
-            description: "Description"
-            contents: "Content"
-            display_children_on_side_menu: "Sidebar Menu?"
-            display_children_as_dropdown_menu: "Pull-down Menu?"
-            visible_to_public: "Publicly Visible?"
-            slug: "Name in URL"
+        menu_title: "Menu Label"
+        title: "Title"
+        description: "Description"
+        contents: "Content"
+        display_children_on_side_menu: "Sidebar Menu?"
+        display_children_as_dropdown_menu: "Pull-down Menu?"
+        visible_to_public: "Publicly Visible?"
+        slug: "Name in URL"
+
+      member_profile:
+        MemberProfile: "Member Name"
+
 
     messages:
       custom_page:
@@ -27,6 +31,13 @@ en:
       parent_page:
         messages:
           none: "Select parent page if desired ..."
+
+  member_profile:
+      show:
+        heading: "Member profile for '%{name}'"
+      index:
+        heading: "Member Profile"
+
 
 #  attributes:
 #    created_at: Created at

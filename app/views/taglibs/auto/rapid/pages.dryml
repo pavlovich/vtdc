@@ -9,6 +9,7 @@
     <nav-item with="&Calendar"><ht key="calendar.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&MemberProfile"><ht key="member_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Position"><ht key="position.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -528,5 +529,117 @@
 
   </page>
 </def>
+
+
+
+<!-- ====== Position Pages ====== -->
+
+<def tag="index-page" for="Position">
+  <page merge title="#{ht 'position.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page position" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="position.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="position.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="position.actions.new">New Position</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Position">
+  <page merge title="#{ht 'position.new.title', :default=>[' New Position'] }">
+    <body: class="new-page position" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="position.new.heading">
+          New Position
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'position.actions.create', :default=>['Create Position']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Position">
+  <page merge title="#{ht 'position.show.title', :default=>['Position'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page position" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="position.show.heading" name="#{name(:no_wrapper => true)}">
+          Position <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="position.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Position
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <view:description param="description" />
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Position">
+  <page merge title="#{ht 'position.edit.title', :default=>['Edit Position'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page position" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="position.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Position
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'position.actions.delete', :default=>['Remove This Position']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
 
 

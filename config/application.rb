@@ -29,7 +29,7 @@ module Vtdc
     config.assets.precompile += %w(public.css public.js)
     config.assets.precompile += %w(vtdc.css)
     config.assets.precompile += %w(fullcalendar.css fullcalendar.print.css)
-    config.assets.precompile += %w(calendar.js fullcalendar.js gcal.js jquery.rest.js)
+    config.assets.precompile += %w(calendar.js fullcalendar.js gcal.js jquery.rest.js rails.js)
 
     # Added by the Rails 3 jQuery Template
     # http://github.com/lleger/Rails-3-jQuery, written by Logan Leger

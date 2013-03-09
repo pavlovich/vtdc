@@ -14,6 +14,8 @@
 //= require calendar.js
 //= require fullcalendar.js
 //= require gcal.js
+//= require jquery-ui-sliderAccess.js
+//= require jquery-ui-timepicker-addon.js
 
 $.ajaxSetup({
     beforeSend: function(xhr) {

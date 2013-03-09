@@ -47,3 +47,14 @@
   </card>
 </def>
 
+<def tag="card" for="Position">
+  <card class="position" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <view:description param="description"/>
+    </body:>
+  </card>
+</def>
+
