@@ -84,7 +84,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="display_children_on_side_menu, display_children_as_dropdown_menu, publicly_visible" param/>
+      <record-flags fields="" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="custom_page.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -95,7 +95,7 @@
 
     <content-body: param>
       <view:description param="description" />
-      <field-list fields="menu_title, contents, slug, parent_page" param/>
+      <field-list fields="parent_page" param/>
     </content-body:>
 
   </page>
@@ -197,7 +197,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="administrator" param/>
+      <record-flags fields="" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="member.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -207,7 +207,6 @@
     </content-header:>
 
     <content-body: param>
-      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>
