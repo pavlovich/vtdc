@@ -19,34 +19,34 @@
   <div class="carousel-inner">
     <div class="item active"><!-- class of active since it's the first item -->
       <div class="image-holder">
-      <img src="http://www.k9stud.com/images/mitch%20holden/mitch%20holden_doberman-pinscher-a20124140572.jpg" alt="" />
+      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/1/slide_GaitingAroundTheRing.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Bite work is FUN !!!</p>
+        <p>Gaiting around the Ring</p>
       </div>
     </div>
     <div class="item">
       <div class="image-holder">
-      <img src="http://cdn.pedigreedatabase.com/dogbreeds/doberman_pinscher.jpg" alt="" />
+      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/2/slide_GreatPresentation.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Gorgeous!!!!</p>
+        <p>Great Presentation!</p>
       </div>
     </div>
     <div class="item">
       <div class="image-holder">
-      <img src="http://howmanyarethere.net/wp-content/uploads/2012/09/11927798Doberman_Pinscher_Puppy.jpg" alt="" />
+      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/3/slide_TheBigD.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Adorable ... but what a nightmare!!!!</p>
+        <p>The Big D</p>
       </div>
     </div>
     <div class="item">
       <div class="image-holder">
-      <img src="http://3.bp.blogspot.com/-yopTanRwzjc/TslU9lbTs3I/AAAAAAAAH1M/lsT8dKOrXe0/s1600/perros+cachorro+raza+doberman.jpg" alt="" />
+      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/4/slide_TrainingTheBarkAndHold.jpg" alt="" />
       </div>
       <div class="carousel-caption">
-        <p>Pretty cute puppy!</p>
+        <p>Training the Bark and Hold</p>
       </div>
     </div>
   </div><!-- /.carousel-inner -->

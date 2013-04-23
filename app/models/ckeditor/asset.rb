@@ -16,6 +16,9 @@ class Ckeditor::Asset < ActiveRecord::Base
     width :integer
     height :integer
 
+    tags :string
+    caption :string
+
     timestamps
   end
 

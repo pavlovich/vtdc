@@ -9,6 +9,7 @@
     <nav-item with="&Calendar"><ht key="calendar.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&MemberProfile"><ht key="member_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Photo"><ht key="photo.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Position"><ht key="position.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
@@ -529,6 +530,118 @@
 
   </page>
 </def>
+
+
+
+<!-- ====== Photo Pages ====== -->
+
+<def tag="index-page" for="Photo">
+  <page merge title="#{ht 'photo.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="photo.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="photo.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="photo.actions.new">New Photo</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Photo">
+  <page merge title="#{ht 'photo.new.title', :default=>[' New Photo'] }">
+    <body: class="new-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="photo.new.heading">
+          New Photo
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'photo.actions.create', :default=>['Create Photo']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Photo">
+  <page merge title="#{ht 'photo.show.title', :default=>['Photo'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="photo.show.heading" name="#{name(:no_wrapper => true)}">
+          Photo <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Photo
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="data_file_name, data_content_type, data_file_size, assetable_type, width, height, tags, caption, data_updated_at" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Photo">
+  <page merge title="#{ht 'photo.edit.title', :default=>['Edit Photo'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="photo.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Photo
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'photo.actions.delete', :default=>['Remove This Photo']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
 
 
 

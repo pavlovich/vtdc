@@ -16,6 +16,7 @@
 //= require gcal.js
 //= require jquery-ui-sliderAccess.js
 //= require jquery-ui-timepicker-addon.js
+//= require image.js
 
 $.ajaxSetup({
     beforeSend: function(xhr) {

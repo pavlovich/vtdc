@@ -1,6 +1,0 @@
-<show-page>
-    <field-list: replace >
-      <%= image_tag @this.photo.url(:medium) %>
-     <field-list fields="caption, public" class="form-horizontal" />
-    </field-list:>
-</show-page>

@@ -69,11 +69,12 @@
 
 </extend>
 
-<!--<extend tag="form" for="Photo">-->
-  <!--<old-form merge multipart>-->
-    <!--<field-list: fields="caption, public, photo"/>-->
-  <!--</old-form>-->
-<!--</extend>-->
+<extend tag="form" for="Photo">
+   <old-form merge multipart>
+    <field-list: fields="caption, data"/>
+   </old-form>
+ </extend>
+
 
 <extend tag="select-one">
   <old-select-one: merge-attrs="&get_blank_message_opts" />
