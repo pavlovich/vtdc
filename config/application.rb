@@ -110,4 +110,39 @@ module Vtdc
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
   end
+
 end
+
+module HoboFields
+  module Types
+    class RedactorText < HtmlString
+      HoboFields.register_type(:rdtext, self)
+    end
+  end
+end
+
+class String
+  def to_object_name_and_method_name
+    object_name, method_name = self.split('[')[-1].split().unshift(self.split('[')[0..-2].join('['))
+    method_name.chomp!(']') if method_name && !method_name.empty?
+    method_name, object_name = [object_name, 'this'] if !method_name
+    [object_name.to_sym, method_name.to_s]
+  end
+end
+
+#module RedactorRails
+##  IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/pjpeg', 'image/tiff', 'image/x-png']
+#
+##  FILE_TYPES = ['application/msword', 'application/pdf', 'text/plain', 'text/rtf', 'application/vnd.ms-excel']
+#
+##  autoload :Http, 'redactor-rails/http'
+#
+#  @@image_file_types = ["jpg", "jpeg", "png", "gif", "tiff"]
+#  @@document_file_types = ["pdf", "doc", "docx", "xls", "xlsx", "rtf", "txt"]
+#
+#
+#  @@picture_model = Vtdc::Picture
+#  @@document_model = Vtdc::Document
+#
+#end
+

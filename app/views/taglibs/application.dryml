@@ -39,7 +39,12 @@
             <div class="app-header container">
                 <div class="app-name-2">
                     <div id="logo">
+                        <if test="&current_user.logged_in?" >
+                        <a href="/private"><image src="VTDCLogoHeader.png"/></a>
+                        </if>
+                        <else>
                         <image src="VTDCLogoHeader.png"/>
+                        </else>
                     </div>
                     <div id="name">
                         <div id="name1">VTDC</div>
@@ -71,10 +76,15 @@
 
 <extend tag="form" for="Photo">
    <old-form merge multipart>
-    <field-list: fields="caption, data"/>
+    <field-list: fields="name, caption, tags, publicly_visible, slideshow, data"/>
    </old-form>
  </extend>
 
+<extend tag="form" for="Document">
+   <old-form merge multipart>
+    <field-list: fields="name, data"/>
+   </old-form>
+ </extend>
 
 <extend tag="select-one">
   <old-select-one: merge-attrs="&get_blank_message_opts" />
@@ -84,14 +94,8 @@
    <%= file_field_tag param_name_for_this, attributes %>
  </def>
 
-<extend tag="card" for="UserProfile">
-  <old-card merge>
-    <default: replace>
-    <div class="users">
-    </div>
-    </default:>
-  </old-card>
-</extend>
+
+
 
  <def tag="card" for="Paperclip::Attachment">
    <%= image_tag absolute_attachment_url(@this.top_photo, :thumb) %>
@@ -227,3 +231,84 @@
 <!--<def tag="input" for="Date">-->
   <!--<datepicker dateFormat="yy-mm-dd" merge />-->
 <!--</def>-->
+
+
+<def tag="input" for="rdtext" attribs="name">
+  <%
+  object_name, method_name = attributes['name'].to_object_name_and_method_name
+  -%>
+  <div class="cktextarea textarea">
+    <%= rdtext_area object_name, method_name %>
+  </div>
+</def>
+
+<def tag="view" for="rdtext">
+  <%= raw this %>
+</def>
+
+<def tag="show-page" for="Photo">
+  <page merge title="#{ht 'photo.show.title', :default=>['Photo'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+
+          <name/>
+
+      </h2>
+
+      <record-flags fields="publicly_visible, slideshow" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Photo
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <image src="#{@photo.data.url(:slide)}" />
+      <field-list fields="thumb, slide, original, caption, tags, data_file_name, data_content_type, data_file_size, data_updated_at" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+<def tag="show-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.show.title', :default=>['Member profile'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.show.heading" name="#{name(:no_wrapper => true)}">
+          Member profile <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="member_profile.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Member profile
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="bio, member, positions" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+<def tag="form" for="Member">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, state, current_password, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'member.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>

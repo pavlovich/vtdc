@@ -12,5 +12,5 @@
 //= require hobo_bootstrap
 //= require hobo_jquery_ui
 //= require hobo_bootstrap_ui
-//= require hobo_ckeditor
+//= require redactor-rails
 //= require_tree ./private

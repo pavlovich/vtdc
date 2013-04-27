@@ -4,4 +4,8 @@ class Guest < Hobo::Model::Guest
     false
   end
 
+  def logged_in?
+    false
+  end
+
 end

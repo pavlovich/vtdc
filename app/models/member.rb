@@ -8,11 +8,11 @@ class Member < ActiveRecord::Base
     administrator :boolean, :default => false
     timestamps
   end
-  attr_accessible :name, :email_address, :password, :password_confirmation, :positions
+  attr_accessible :name, :email_address, :current_password, :password, :password_confirmation
 
   has_one :member_profile
 
-  has_and_belongs_to_many :positions
+  has_many :positions
 
   #def self.attr_order
   #  return [:caption, :public, :photo]
@@ -75,9 +75,10 @@ class Member < ActiveRecord::Base
   end
 
   def update_permitted?
-    acting_user.administrator? ||
-        (acting_user == self && only_changed?(:email_address, :crypted_password,
-                                              :current_password, :password, :password_confirmation))
+    acting_user.administrator? || (acting_user.logged_in? && acting_user.id == id)
+    #||
+    #    (acting_user == self && only_changed?(:email_address, :crypted_password,
+    #                                          :current_password, :password, :password_confirmation))
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.
   end
@@ -87,6 +88,18 @@ class Member < ActiveRecord::Base
   end
 
   def view_permitted?(field)
+    return  acting_user.administrator? if field == :administrator
     true
+  end
+
+  def logged_in?
+    true
+  end
+
+  def validate_current_password_when_changing_password
+    if(!acting_user.nil? && !acting_user.administrator?)
+      errors.add :current_password, I18n.t("hobo.messages.current_password_is_not_correct", :default => "is not correct") \
+            if changing_password? && !authenticated?(current_password)
+    end
   end
 end

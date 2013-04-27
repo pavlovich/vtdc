@@ -4,6 +4,9 @@ class EventsController < ApplicationController
 
   auto_actions :all
 
+  before_filter :login_required, :except => [ :index, :show ]
+
+
   def hobo_index
     # full_calendar will hit the index method with query parameters
     # 'start' and 'end' in order to filter the results for the

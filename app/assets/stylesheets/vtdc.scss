@@ -196,7 +196,7 @@ form {
   display: block;
   line-height: 1;
   width: 540px;
-  height: 420px;
+  height: auto;
   margin: auto;
 }
 
@@ -223,6 +223,7 @@ form {
   }
   li {
     border-bottom: 1px solid #a9a9a9;
+    margin-right: 5px;
 
   }
   .news-item-title, .news-item-body {
@@ -239,6 +240,7 @@ form {
     padding-left: 10px;
     padding-right: 15px;
     padding-bottom: 10px;
+    padding-top: 10px;
     list-style: none;
   }
 }
@@ -417,7 +419,7 @@ input.delete-custom-page-button:hover{
   margin-left: 2%;
   padding: 5px;
   border: 2px inset goldenrod;
-  height: 300px;
+  height: auto;
 }
 
 #motto {
@@ -472,3 +474,7 @@ input.delete-custom-page-button:hover{
 .ui-timepicker-rtl{ direction: rtl; }
 .ui-timepicker-rtl dl { text-align: right; }
 .ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+#redactor_form_image_align {
+  width: 99%;
+}

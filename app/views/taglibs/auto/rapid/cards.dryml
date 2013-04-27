@@ -1,6 +1,14 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
+<def tag="card" for="Announcement">
+  <card class="announcement" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="Calendar">
   <card class="calendar" param="default" merge>
     <header: param>
@@ -17,6 +25,14 @@
     <body: param>
       <view:description param="description"/>
     </body:>
+  </card>
+</def>
+
+<def tag="card" for="Document">
+  <card class="document" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
   </card>
 </def>
 

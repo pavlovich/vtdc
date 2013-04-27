@@ -9,10 +9,111 @@
     <nav-item with="&Calendar"><ht key="calendar.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&MemberProfile"><ht key="member_profile.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Photo"><ht key="photo.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Position"><ht key="position.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Announcement Pages ====== -->
+
+<def tag="index-page" for="Announcement">
+  <page merge title="#{ht 'announcement.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page announcement" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="announcement.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="announcement.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Announcement">
+  <page merge title="#{ht 'announcement.new.title', :default=>[' New Announcement'] }">
+    <body: class="new-page announcement" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="announcement.new.heading">
+          New Announcement
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'announcement.actions.create', :default=>['Create Announcement']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Announcement">
+  <page merge title="#{ht 'announcement.show.title', :default=>['Announcement'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page announcement" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="announcement.show.heading" name="#{name(:no_wrapper => true)}">
+          Announcement <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="publicly_visible" param/>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="text, link, start_date, end_date" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Announcement">
+  <page merge title="#{ht 'announcement.edit.title', :default=>['Edit Announcement'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page announcement" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="announcement.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Announcement
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'announcement.actions.delete', :default=>['Remove This Announcement']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
 
 
 
@@ -38,9 +139,6 @@
     </content-header:>
 
     <content-body: param>
-      <a action="new" to="&model" param="new-link">
-        <ht key="calendar.actions.new">New Calendar</ht>
-      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -88,12 +186,6 @@
       </h2>
 
       <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="calendar.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit Calendar
-        </ht>
-      </a>
     </content-header:>
 
     <content-body: param>
@@ -116,6 +208,109 @@
         </ht>
       </h2>
       <delete-button label="#{ht 'calendar.actions.delete', :default=>['Remove This Calendar']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Document Pages ====== -->
+
+<def tag="index-page" for="Document">
+  <page merge title="#{ht 'document.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page document" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="document.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="document.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Document">
+  <page merge title="#{ht 'document.new.title', :default=>[' New Document'] }">
+    <body: class="new-page document" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="document.new.heading">
+          New Document
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'document.actions.create', :default=>['Create Document']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Document">
+  <page merge title="#{ht 'document.show.title', :default=>['Document'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page document" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="document.show.heading" name="#{name(:no_wrapper => true)}">
+          Document <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="data_file_name, data_content_type, data_file_size, data_updated_at" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Document">
+  <page merge title="#{ht 'document.edit.title', :default=>['Edit Document'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page document" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="document.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Document
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'document.actions.delete', :default=>['Remove This Document']}" param/>
     </content-header:>
 
     <content-body: param>
@@ -199,7 +394,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="all_day" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="event.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -210,6 +405,7 @@
 
     <content-body: param>
       <view:description param="description" />
+      <field-list fields="starts_at, ends_at" param/>
     </content-body:>
 
   </page>
@@ -262,9 +458,6 @@
     </content-header:>
 
     <content-body: param>
-      <a action="new" to="&model" param="new-link">
-        <ht key="member_profile.actions.new">New Member profile</ht>
-      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -312,16 +505,10 @@
       </h2>
 
       <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="member_profile.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit Member profile
-        </ht>
-      </a>
     </content-header:>
 
     <content-body: param>
-      <field-list fields="member" param/>
+      <field-list fields="bio, member" param/>
     </content-body:>
 
   </page>
@@ -382,13 +569,6 @@
       <page-nav param="bottom-page-nav"/>
 
 
-      <div param="new-form">
-        <h3 param="new-form-heading">
-          <ht key="member.form.new.heading">New Member</ht>
-        </h3>
-        <form with="&@invalid_record || new_for_current_user(Member)" param/>
-      </div>
-
     </content-body:>
   </page>
 </def>
@@ -427,16 +607,11 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="member.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit Member
-        </ht>
-      </a>
+      <record-flags fields="administrator" param/>
     </content-header:>
 
     <content-body: param>
+      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>
@@ -552,9 +727,6 @@
     </content-header:>
 
     <content-body: param>
-      <a action="new" to="&model" param="new-link">
-        <ht key="photo.actions.new">New Photo</ht>
-      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -601,16 +773,11 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit Photo
-        </ht>
-      </a>
+      <record-flags fields="publicly_visible, slideshow" param/>
     </content-header:>
 
     <content-body: param>
+      <field-list fields="caption, tags, data_file_name, data_content_type, data_file_size, data_updated_at" param/>
     </content-body:>
 
   </page>
@@ -663,9 +830,6 @@
     </content-header:>
 
     <content-body: param>
-      <a action="new" to="&model" param="new-link">
-        <ht key="position.actions.new">New Position</ht>
-      </a>
 
       <page-nav param="top-page-nav"/>
 
@@ -713,16 +877,11 @@
       </h2>
 
       <record-flags fields="" param/>
-
-      <a action="edit" if="&can_edit?" param="edit-link">
-        <ht key="position.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit Position
-        </ht>
-      </a>
     </content-header:>
 
     <content-body: param>
       <view:description param="description" />
+      <field-list fields="member" param/>
     </content-body:>
 
   </page>

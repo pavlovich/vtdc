@@ -1,10 +1,10 @@
 Vtdc::Application.routes.draw do
 
+  mount RedactorRails::Engine => '/redactor_rails'
+
  # resources :eventsx
 
  # get "calendar/index"
-
-  mount Ckeditor::Engine => '/ckeditor'
 
   match ENV['RAILS_RELATIVE_URL_ROOT'] => 'public#index' if ENV['RAILS_RELATIVE_URL_ROOT']
 
@@ -76,4 +76,10 @@ Vtdc::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  namespace :private do
+
+    root :to => 'private_site#index'
+
+  end
 end

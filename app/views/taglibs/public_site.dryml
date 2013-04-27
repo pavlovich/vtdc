@@ -18,4 +18,3 @@
 
 <include gem='hobo_paperclip'/>
 
-<include gem='hobo_ckeditor'/>

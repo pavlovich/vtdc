@@ -2,7 +2,9 @@ class PublicController < ApplicationController
 
   hobo_controller
 
-  def index; end
+  def index
+    @pictures = Photo.for_slideshow
+  end
 
   def summary
     if !current_user.administrator?

@@ -11,44 +11,29 @@
       http://twitter.github.com/bootstrap/javascript.html#carousel -->
 <div id="myCarousel" class="span7 carousel slide" data-interval="999999" data-pause="Pausing ..."><!-- class of slide for animation -->
               <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <% counter = 0
+                     class_string = 'active' -%>
+                  <repeat with="&@pictures">
+                  <li data-target="#myCarousel" data-slide-to="#{counter}" class="#{class_string}"></li>
+                  <% counter = counter +1
+                     class_string = "" -%>
+                  </repeat>
               </ol>
   <div class="carousel-inner">
-    <div class="item active"><!-- class of active since it's the first item -->
+    <% counter = 0 -%>
+    <repeat with="&@pictures">
+    <%  the_class = 'item'
+        the_class = 'item active' if counter == 0 -%>
+    <div class="#{the_class}">
       <div class="image-holder">
-      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/1/slide_GaitingAroundTheRing.jpg" alt="" />
+        <img src="&this.slide" alt="&this.title" />
       </div>
       <div class="carousel-caption">
-        <p>Gaiting around the Ring</p>
+        <p><%= this.caption %></p>
       </div>
     </div>
-    <div class="item">
-      <div class="image-holder">
-      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/2/slide_GreatPresentation.jpg" alt="" />
-      </div>
-      <div class="carousel-caption">
-        <p>Great Presentation!</p>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image-holder">
-      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/3/slide_TheBigD.jpg" alt="" />
-      </div>
-      <div class="carousel-caption">
-        <p>The Big D</p>
-      </div>
-    </div>
-    <div class="item">
-      <div class="image-holder">
-      <img src="http://photos.totaldoberman.com/ckeditor_assets/pictures/4/slide_TrainingTheBarkAndHold.jpg" alt="" />
-      </div>
-      <div class="carousel-caption">
-        <p>Training the Bark and Hold</p>
-      </div>
-    </div>
+    <% counter = counter + 1 -%>
+    </repeat>
   </div><!-- /.carousel-inner -->
   <!--  Next and Previous controls below
         href values must reference the id for this carousel -->
@@ -65,10 +50,17 @@
         <div class="news span5">
         <h1>The Latest</h1>
         <ul>
+            <repeat with="&Announcement.for_latest_list" >
             <li>
-                <span class="news-item-title">Upcoming UDC Regional Show:&nbsp;</span>
-                <span class="news-item-body"><br/>We are excited to announce that we will be hosting a UDC Northeast Regional Conformation Show and Temperament Test (TT) in Southern Vermont this Summer on August 24th and 25th, 2013. Stay tuned for updates coming to our website soon!</span>
+            <if test="&this.link" >
+                <a class="news-item-title" href="&this.link"><%= this.title %></a>
+            </if>
+            <else>
+                <div class="news-item-title"><%= this.title %></div>
+            </else>
+                <div class="news-item-body"><%= raw this.text %></div>
             </li>
+            </repeat>
         </ul>
         </div>
     </section>

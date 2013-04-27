@@ -1,0 +1,69 @@
+<page title="Member Home">
+
+  <body: class="front-page"/>
+
+  <content:>
+
+
+    <section class="content-body">
+
+<!--  Carousel - consult the Twitter Bootstrap docs at
+      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div id="myCarousel" class="span7 carousel slide" data-interval="999999" data-pause="Pausing ..."><!-- class of slide for animation -->
+              <ol class="carousel-indicators">
+                  <% counter = 0
+                     class_string = 'active' -%>
+                  <repeat with="&@pictures">
+                  <li data-target="#myCarousel" data-slide-to="#{counter}" class="#{class_string}"></li>
+                  <% counter = counter +1
+                     class_string = "" -%>
+                  </repeat>
+              </ol>
+  <div class="carousel-inner">
+    <% counter = 0 -%>
+    <repeat with="&@pictures">
+    <%  the_class = 'item'
+        the_class = 'item active' if counter == 0 -%>
+    <div class="#{the_class}">
+      <div class="image-holder">
+        <img src="&this.slide" alt="&this.title" />
+      </div>
+      <div class="carousel-caption">
+        <p><%= this.caption %></p>
+      </div>
+    </div>
+    <% counter = counter + 1 -%>
+    </repeat>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<!-- /.carousel -->
+        <script>
+          $(document).ready(
+          function(){
+            $('.carousel').carousel();
+          });
+        </script>
+        <div class="news span5">
+        <h1>The Latest</h1>
+        <ul>
+            <repeat with="&Announcement.for_latest_list" >
+            <li>
+            <if test="&this.link" >
+                <a class="news-item-title" href="&this.link"><%= this.title %></a>
+            </if>
+            <else>
+                <div class="news-item-title"><%= this.title %></div>
+            </else>
+                <div class="news-item-body"><%= raw this.text %></div>
+            </li>
+            </repeat>
+        </ul>
+        </div>
+    </section>
+  </content:>
+
+</page>

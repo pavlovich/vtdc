@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
     starts_at   :datetime
     ends_at     :datetime
     all_day     :boolean
-    description :cktext
+    description :rdtext
     timestamps
   end
   attr_accessible :title, :starts_at, :ends_at, :all_day, :description

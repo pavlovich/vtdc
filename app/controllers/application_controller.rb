@@ -15,4 +15,15 @@ class ApplicationController < ActionController::Base
     request.accepts.sort! { |x, y| ajax_request_types.include?(y.to_s) ? 1 : -1 } if request.xhr?
   end
 
+  private
+
+  def admin_required
+    redirect_to home_page unless current_user.administrator?
+  end
+
+
+  def login_required
+    redirect_to home_page if current_user.guest?
+  end
+
 end

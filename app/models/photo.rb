@@ -2,48 +2,89 @@ class Photo < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
+  RedactorRails.picture_model=Photo
+
   fields do
-    data_file_name :string, :null => false
-    data_content_type :string
-    data_file_size :string
-    assetable_id :integer
-    assetable_type :string, :limit => 30
-    type :string, :limit => 30
-
-    width :integer
-    height :integer
-
-    tags :string
-    caption :string
+    name              :string
+    caption           :string
+    publicly_visible  :boolean, :default => true
+    slideshow         :boolean, :default => false
+    tags              :string, :default => 'None'
     timestamps
   end
+  attr_accessible :name, :caption, :tags, :publicly_visible, :slideshow, :data
 
   has_attached_file :data,
                     :url  => "photos.totaldoberman.com",
-                    :path => "ckeditor_assets/pictures/:id/:style_:basename.:extension",
+                    :path => "pictures/:id/:style_:basename.:extension",
                     :styles => {
                         :thumb=> "100x100#",
-                        :content => "300x300>",
                         :slide => "540x420" }
 
-  attr_accessible :caption, :data, :data_url
+  validates_attachment_size :data, :less_than => 2.megabytes
+  validates_attachment_presence :data
+
+  def self.with_tag(tag_string)
+    Photo.where("photos.tags ~= ?", tag_string)
+  end
+
+  def self.for_slideshow
+    Photo.where(:slideshow => true)
+  end
+
+  def thumb
+    strip_CSRF(data.url(:thumb))
+  end
+
+  def original
+    url
+  end
+
+  def image
+    url
+  end
+
+  def slide
+    strip_CSRF(data.url(:slide))
+  end
+
+  def title
+    name
+  end
+
+  def folder
+    tags || "default"
+  end
+
+  def url
+    strip_CSRF(data.url(:original))
+  end
+
+  def as_json(options)
+    {thumb: thumb, image: image, title: title, folder: folder, url: url, name: name, caption: caption, tags: tags}
+  end
+
 
   # --- Permissions --- #
 
   def create_permitted?
-    acting_user.administrator?
+    acting_user.logged_in?
   end
 
   def update_permitted?
-    acting_user.administrator?
+    acting_user.logged_in?
   end
 
   def destroy_permitted?
-    acting_user.administrator?
+    acting_user.logged_in?
   end
 
   def view_permitted?(field)
-    true
+    publicly_visible || acting_user.logged_in?
+  end
+
+  def strip_CSRF(the_url)
+    the_url.partition('?').first
   end
 
 end

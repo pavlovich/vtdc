@@ -4,12 +4,12 @@ class Position < ActiveRecord::Base
 
   fields do
     name        :string
-    description :cktext
+    description :rdtext
     timestamps
   end
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :member_id, :member
 
-  has_and_belongs_to_many :members
+  belongs_to :member
 
   # --- Permissions --- #
 
@@ -18,7 +18,7 @@ class Position < ActiveRecord::Base
   end
 
   def update_permitted?
-    acting_user.administrator?
+    acting_user.logged_in?
   end
 
   def destroy_permitted?

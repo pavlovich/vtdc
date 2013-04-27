@@ -2,12 +2,15 @@ class Private::PrivateSiteController < ApplicationController
 
   hobo_controller
 
-  before_filter :admin_required, :except => [ :login, :forgot_password, :accept_invitation, :do_accept_invitation, :reset_password, :do_reset_password]
+  before_filter :login_required
 
-  private
+  def index;
+    @pictures = Photo.for_slideshow
+    render 'private/index'
+  end
 
-  def admin_required
-    redirect_to home_page unless current_user.administrator?
+  def login_required
+    redirect_to home_page if current_user.guest?
   end
 
 end

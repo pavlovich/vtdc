@@ -23,16 +23,39 @@
   </old-card>
 </extend>
 
-<extend tag="card" for="UserProfile">
-  <old-card merge>
-    <default: replace>
-    <div class="users">
-     xxxx
-    </div>
-    </default:>
-  </old-card>
-</extend>
+<def tag="index-page" for="CustomPage">
+  <page merge title="#{ht 'custom_page.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page custom-page" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="custom_page.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="custom_page.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="custom_page.actions.new">New Custom page</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection fields="this, title, actions" param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
 
 <include gem='hobo_paperclip'/>
-
-<include gem='hobo_ckeditor'/>
