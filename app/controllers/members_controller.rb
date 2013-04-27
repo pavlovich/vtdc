@@ -4,7 +4,7 @@ class MembersController < ApplicationController
 
   auto_actions :all, :except => [ :index, :new, :create ]
 
- before_filter :admin_required, :except => [ :login, :forgot_password, :accept_invitation, :do_accept_invitation, :reset_password, :do_reset_password]
+ before_filter :admin_required, :except => [ :login, :logout, :forgot_password, :accept_invitation, :do_accept_invitation, :reset_password, :do_reset_password]
 
   # Normally, members should be created via the user lifecycle, except
   #  for the initial user created via the form on the public screen on
