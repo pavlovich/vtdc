@@ -49,10 +49,7 @@ class Member < ActiveRecord::Base
     end
 
     transition :accept_invitation, { :invited => :active }, :available_to => :key_holder,
-               :params => [ :password, :password_confirmation ] do
-      self.member_profile = MemberProfile.create
-      self.save
-    end
+               :params => [ :password, :password_confirmation ]
 
     transition :request_password_reset, { :active => :active }, :new_key => true do
       MemberMailer.forgot_password(self, lifecycle.key).deliver
