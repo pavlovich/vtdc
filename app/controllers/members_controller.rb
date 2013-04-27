@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   hobo_user_controller
 
-  auto_actions :show
+  auto_actions :all, :except => [ :index, :new, :create ]
 
  before_filter :admin_required, :except => [ :login, :forgot_password, :accept_invitation, :do_accept_invitation, :reset_password, :do_reset_password]
 

@@ -26,14 +26,20 @@ Vtdc::Application.routes.draw do
 
 
   # Resource routes for controller members
-  resources :members, :only => [:show] do
+  resources :members, :only => [:edit, :show, :update, :destroy] do
     member do
+      get 'account'
       put 'accept_invitation', :action => 'do_accept_invitation'
       get 'accept_invitation'
       put 'reset_password', :action => 'do_reset_password'
       get 'reset_password'
     end
   end
+
+  # User routes for controller members
+  match 'member_login(.:format)' => 'members#login', :as => 'member_login'
+  get 'member_logout(.:format)' => 'members#logout', :as => 'member_logout'
+  match 'member_forgot_password(.:format)' => 'members#forgot_password', :as => 'member_forgot_password'
 
 
   # Resource routes for controller photos
@@ -134,8 +140,20 @@ Vtdc::Application.routes.draw do
   get 'member_profiles/:id(.:format)' => 'member_profiles#show', :as => 'member_profile', :constraints => { :id => %r([^/.?]+) }
 
 
+  # DEPRECATED Lifecycle routes for controller members
+  put 'members/:id/accept_invitation(.:format)' => 'members#do_accept_invitation', :as => 'do_member_accept_invitation'
+  get 'members/:id/accept_invitation(.:format)' => 'members#accept_invitation', :as => 'member_accept_invitation'
+  put 'members/:id/reset_password(.:format)' => 'members#do_reset_password', :as => 'do_member_reset_password'
+  get 'members/:id/reset_password(.:format)' => 'members#reset_password', :as => 'member_reset_password'
+
+  # DEPRECATED Show action routes for controller members
+  get 'members/:id/account(.:format)' => 'members#account', :as => 'member_account'
+
   # DEPRECATED Resource routes for controller members
+  get 'members/:id/edit(.:format)' => 'members#edit', :as => 'edit_member'
   get 'members/:id(.:format)' => 'members#show', :as => 'member', :constraints => { :id => %r([^/.?]+) }
+  put 'members/:id(.:format)' => 'members#update', :as => 'update_member', :constraints => { :id => %r([^/.?]+) }
+  delete 'members/:id(.:format)' => 'members#destroy', :as => 'destroy_member', :constraints => { :id => %r([^/.?]+) }
 
 
   # DEPRECATED Resource routes for controller photos
