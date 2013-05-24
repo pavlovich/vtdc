@@ -22,3 +22,7 @@ $.ajaxSetup({
         xhr.setRequestHeader("Accept", "text/javascript");
     }
 });
+
+$(document).ready(function(){
+    $('.datetimepicker').datetimepicker({});
+});
