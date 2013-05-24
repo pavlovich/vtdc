@@ -14,3 +14,11 @@
 //= require hobo_bootstrap_ui
 //= require redactor-rails
 //= require_tree ./private
+
+$(document).ready(function() {
+    $('.datetimepicker').timepicker({
+        controlType: 'select',
+        timeFormat: 'hh:mm tt',
+        showTime: true
+    });
+})
