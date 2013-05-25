@@ -220,7 +220,7 @@
   </old-show-page>
 </extend>
 
-<def tag="input" for="datetime">
+<!-- def tag="input" for="datetime">
     <%= text_field_tag "#{this_field}", "#{this}", :class => "datetimepickerx" %>
 </def>
 
@@ -234,7 +234,7 @@
 
 <def tag="editor" for="DateTime">
     <%= text_field_tag '&field_name', "&this", :class => "datetimepickerx" %>
-</def>
+</def -->
 
 <!--<def tag="input" for="Date">-->
   <!--<datepicker dateFormat="yy-mm-dd" merge />-->
