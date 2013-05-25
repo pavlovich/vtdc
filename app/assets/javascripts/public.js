@@ -17,6 +17,7 @@
 //= require_tree ./public
 
 $(document).ready(function() {
+    alert("hello");
     $('.datetimepicker').timepicker({
     controlType: 'select',
     timeFormat: 'hh:mm tt',

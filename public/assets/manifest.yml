@@ -45,8 +45,8 @@ jquery.rest.js: jquery.rest-f5f1d5dba3157a59b90f5e68d32cc38e.js
 jquery/index.rest.js: jquery.rest-f5f1d5dba3157a59b90f5e68d32cc38e.js
 private.js: private-4184d06e1d82400e73029abbf524e04a.js
 private/index.js: private-4184d06e1d82400e73029abbf524e04a.js
-public.js: public-4184d06e1d82400e73029abbf524e04a.js
-public/index.js: public-4184d06e1d82400e73029abbf524e04a.js
+public.js: public-455329a5f6ef5937a1523677352f23a6.js
+public/index.js: public-455329a5f6ef5937a1523677352f23a6.js
 application.css.orig: application.css-28807f997f78d7bfefc837cac6641572.orig
 application/index.css.orig: application.css-28807f997f78d7bfefc837cac6641572.orig
 application.css: application-b14511fb70bfb039beeb71ce9329fd52.css

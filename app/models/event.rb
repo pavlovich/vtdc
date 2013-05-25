@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 
   fields do
     title       :string
-    starts_at   :datetime, :default => Date.current #, :default => DateTime.current
+    starts_at   :datetime, :default => DateTime.current
     ends_at     :datetime, :default => DateTime.current
     all_day     :boolean
     description :rdtext
