@@ -24,5 +24,5 @@
 //})
 
 $(document).ready(function(){
-    $('.datetimepicker').datetimepicker({});
+    $('.datetimepickerx').datetimepicker({});
 });
