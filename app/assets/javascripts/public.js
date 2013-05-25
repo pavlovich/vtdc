@@ -16,11 +16,14 @@
 //= require redactor-rails
 //= require_tree ./public
 
-$(document).ready(function() {
-    alert("hello");
-    $('.datetimepicker').timepicker({
-    controlType: 'select',
-    timeFormat: 'hh:mm tt',
-    showTime: true
+//$(document).ready(function() {
+//    $('.datetimepicker').timepicker({
+//    controlType: 'select',
+//    timeFormat: 'hh:mm tt',
+//    showTime: true
+//});
+//})
+
+$(document).ready(function(){
+    $('.datetimepicker').datetimepicker({});
 });
-})
