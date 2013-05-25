@@ -4,8 +4,8 @@ class Event < ActiveRecord::Base
 
   fields do
     title       :string
-    starts_at   :datetime, :default => DateTime.current
-    ends_at     :datetime, :default => DateTime.current
+    starts_at   :datetime, :default => DateTime.current.minus 4.hours
+    ends_at     :datetime, :default => DateTime.current.minus 3 hours
     all_day     :boolean
     description :rdtext
     timestamps
