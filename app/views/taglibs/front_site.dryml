@@ -1,0 +1,322 @@
+<!-- this file is included by public_site.dryml, private_site.dryml et al, so you can place common code in this file-->
+
+<def tag='vtdc-account-nav'>
+  <div class='vtdc-account-nav nav-collapse collapse'>
+      <do with='&current_user'>
+        <ul class='navigation account-nav nav pull-right' param>
+          <li param='search'><live-search param if='&defined_route? :site_search'/></li>
+
+          <if test='&logged_in?'>
+            <li class='nav-item' param='logged-in-as'><a to='&current_user'><t name='&name' key='hobo.actions.logged_in_as'>Logged in as <name/></t></a></li>
+            <li class='nav-item' param='account'><a action='account'><t key='hobo.actions.account'>Account</t></a></li>
+            <li class='nav-item' param='log-out'><a href='&logout_url'><t key='hobo.actions.logout'>Log out</t></a></li>
+          </if>
+          <else>
+            <li class='nav-item' param='log-in'><a href='&login_url'><t key='hobo.actions.login'>Log in</t></a></li>
+            <li class='nav-item' param='sign-up' if='&signup_url'><a href='&signup_url'><t key='hobo.actions.signup'>Sign up</t></a></li>
+          </else>
+        </ul>
+      </do>
+  </div>
+</def>
+
+<def tag='vtdc-dev-user-changer'>
+  <do with='&current_user'>
+    <ul class='navigation account-nav nav pull-right' param>
+      <li param='dev-user-changer' if='&Rails.env.development?'><dev-user-changer/></li>
+    </ul>
+  </do>
+</def>
+
+<extend tag="page">
+    <old-page merge>
+
+        <custom-scripts: replace>
+            <stylesheet name="vtdc"/>
+        </custom-scripts:>
+
+        <prepend-body:>
+            <div class="app-header container">
+                <div class="app-name-2">
+                    <div id="logo">
+                        <if test="&current_user.logged_in?" >
+                        <a href="/private"><image src="VTDCLogoHeader.png"/></a>
+                        </if>
+                        <else>
+                        <image src="VTDCLogoHeader.png"/>
+                        </else>
+                    </div>
+                    <div id="name">
+                        <div id="name1">VTDC</div>
+                        <div id="name2">Vermont Total<br/>Doberman Club</div>
+                    </div>
+                </div>
+                <div id="right-header">
+                    <div id="my-account-nav" class="navbar">
+                        <div class="navbar-inner">
+                            <div class="header container">
+                                <div class="navbar">
+                                    <vtdc-account-nav />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='user-changer' if='&Rails.env.development?'>
+                        <vtdc-dev-user-changer />
+                    </div>
+                    <div id="motto" if='&!Rails.env.development?'>The Total Doberman &nbsp;&nbsp; = &nbsp;&nbsp; Health + Temperament + Structure</div>
+                </div>
+            </div>
+        </prepend-body>
+        <app-name: replace />
+        <account-nav: replace />
+    </old-page>
+
+</extend>
+
+<extend tag="form" for="Photo">
+   <old-form merge multipart>
+    <field-list: fields="name, caption, tags, publicly_visible, slideshow, data"/>
+   </old-form>
+ </extend>
+
+<extend tag="form" for="Document">
+   <old-form merge multipart>
+    <field-list: fields="name, data"/>
+   </old-form>
+ </extend>
+
+<extend tag="select-one">
+  <old-select-one: merge-attrs="&get_blank_message_opts" />
+</extend>
+
+ <def tag="input" for="Paperclip::Attachment">
+   <%= file_field_tag param_name_for_this, attributes %>
+ </def>
+
+
+
+
+ <def tag="card" for="Paperclip::Attachment">
+   <%= image_tag absolute_attachment_url(@this.top_photo, :thumb) %>
+</def>
+
+<extend tag="main-nav">
+  <old-main-nav merge>
+    <append-default:>
+        <repeat with="&CustomPage.visible_top_level_pages_for(current_user)">
+            <top-custom-page-menu />
+        </repeat>
+    </append-default:>
+  </old-main-nav>
+</extend>
+
+<def tag="top-custom-page-menu">
+          <if test="&this.has_child_pages?">
+             <li class="dropdown">
+              <a href="&this.menu_url" class="dropdown" data-toggle="dropdown">
+                <%= this.menu_title %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                  <repeat with="&this.visible_child_pages_for(current_user)">
+                      <if test="&this.has_child_pages?">
+                          <li class="dropdown-submenu">
+                              <child-custom-page-menu />
+                          </li>
+                      </if>
+                      <else>
+                          <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                      </else>
+                  </repeat>
+              </ul>
+            </li>
+          </if>
+          <else>
+              <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+          </else>
+      </def>
+
+      <def tag="child-custom-page-menu">
+          <a tabindex="-1" href="&this.menu_url"><%= this.menu_title %></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <repeat with="&this.visible_child_pages_for(current_user)">
+                  <if test="&this.has_child_pages?">
+                      <li class="dropdown-submenu">
+                          <child-custom-page-menu />
+                      </li>
+                  </if>
+                  <else>
+                      <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                  </else>
+              </repeat>
+          </ul>
+      </def>
+
+<def tag="aside-custom-page-menu">
+    <if test="&this.has_child_pages?">
+        <li>
+            <a href="&this.menu_url" data-target="#xxx"><%= this.menu_title %><div class="arrow down"></div></a>
+            <ul id="xxx" class="in collapse" style="height: auto;">
+                <repeat with="&this.visible_child_pages_for(current_user)">
+                    <if test="&this.has_child_pages?">
+                        <aside-custom-page-menu/>
+                    </if>
+                    <else>
+                        <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+                    </else>
+                </repeat>
+            </ul>
+        </li>
+    </if>
+    <else>
+        <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+    </else>
+</def>
+
+
+<def tag="custom-page-aside">
+
+    <div class="sidebar-nav">
+        <ul class="nav nav-list" id="my-collapse-nav">
+            <li class="nav-header"><%= @custom_page.top_menu_label %></li>
+            <li class="divider"></li>
+            <aside-custom-page-menu with="&@custom_page" />
+        </ul>
+    </div>
+</def>
+
+<def tag="custom-page-top-menu">
+  <div class="navbar">
+    <div class="navbar-inner">
+
+    <ul class="nav">
+        <repeat with="&@custom_page.visible_child_pages_for(current_user)">
+        <li><a href="&this.menu_url"><%= this.menu_title %></a></li>
+        </repeat>
+    </ul>
+    </div>
+  </div>
+</def>
+
+
+<extend tag="show-page" for="CustomPage">
+  <old-show-page merge>
+    <content-body: replace>
+      <div class="section content-body">
+      <view:description param="description" />
+      <div class="form-horizontal">
+        <field-list: fields="menu_title, contents, slug, parent_page">
+          <contents-view: replace>
+            <iframe src="http://www.totaldoberman.com/static/#{@custom_page.slug}" width="100%" height="500px">
+              <p>Placeholder text; only shows up if the page DOESN'T render!</p>
+            </iframe>
+          </contents-view:>
+        </field-list:>
+      </div>
+      </div>
+    </content-body:>
+  </old-show-page>
+</extend>
+
+<!-- def tag="input" for="datetime">
+    <%= text_field_tag "#{this_field}", "#{this}", :class => "datetimepickerx" %>
+</def>
+
+<def tag="editor" for="datetime">
+    <%= text_field_tag '&field_name', "&this", :class => "datetimepickerx" %>
+</def>
+
+<def tag="input" for="DateTime">
+    <%= text_field_tag "#{this_field}", "#{this}", :class => "datetimepickerx" %>
+</def>
+
+<def tag="editor" for="DateTime">
+    <%= text_field_tag '&field_name', "&this", :class => "datetimepickerx" %>
+</def -->
+
+<!--<def tag="input" for="Date">-->
+  <!--<datepicker dateFormat="yy-mm-dd" merge />-->
+<!--</def>-->
+
+
+<def tag="input" for="rdtext" attribs="name">
+  <%
+  object_name, method_name = attributes['name'].to_object_name_and_method_name
+  -%>
+  <div class="cktextarea textarea">
+    <%= rdtext_area object_name, method_name %>
+  </div>
+</def>
+
+<def tag="view" for="rdtext">
+  <%= raw this %>
+</def>
+
+<def tag="show-page" for="Photo">
+  <page merge title="#{ht 'photo.show.title', :default=>['Photo'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page photo" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+
+          <name/>
+
+      </h2>
+
+      <record-flags fields="publicly_visible, slideshow" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="photo.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Photo
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <image src="#{@photo.data.url(:slide)}" />
+      <field-list fields="thumb, slide, original, caption, tags, data_file_name, data_content_type, data_file_size, data_updated_at" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+<def tag="show-page" for="MemberProfile">
+  <page merge title="#{ht 'member_profile.show.title', :default=>['Member profile'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page member-profile" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="member_profile.show.heading" name="#{name(:no_wrapper => true)}">
+          Member profile <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="member_profile.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Member profile
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="bio, member, positions" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+<def tag="form" for="Member">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, state, current_password, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'member.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
