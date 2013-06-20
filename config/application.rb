@@ -13,8 +13,6 @@ end
 
 module Vtdc
   class Application < Rails::Application
-    # Hobo: the showman subsite loads showman.css & showman.js
-    config.assets.precompile += %w(showman.css showman.js)
     config.i18n.default_locale = :en
     # Hobo: the private subsite loads private.css & private.js
     config.assets.precompile += %w(private.css private.js)
