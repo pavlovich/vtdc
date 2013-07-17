@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Hobo/hobo_bootstrap_ui.git
-  revision: b3ca7e96a4eef63c01556afe53db1c78b5f2d2c7
+  revision: 60e5107e7ec488cfc0ea05f51e42b54166a7a2c1
   specs:
-    hobo_bootstrap_ui (2.0.0.pre10)
+    hobo_bootstrap_ui (2.0.1)
       bootstrap-datepicker-rails
       hobo_bootstrap (~> 2.0.0.pre1)
 
@@ -32,40 +32,40 @@ GIT
 
 GIT
   remote: https://github.com/Hobo/hobo.git
-  revision: 9dacbc4465df48f636f8452ca6fc169ff8bc2fd1
+  revision: e3465bfaffb6a59cb59917ee63358388fc808a13
   specs:
-    hobo_jquery (2.0.0)
-      hobo_rapid (= 2.0.0)
+    hobo_jquery (2.0.1)
+      hobo_rapid (= 2.0.1)
       jquery-rails (~> 2.0)
-    hobo_jquery_ui (2.0.0)
-      hobo (= 2.0.0)
-      hobo_jquery (= 2.0.0)
+    hobo_jquery_ui (2.0.1)
+      hobo (= 2.0.1)
+      hobo_jquery (= 2.0.1)
       jquery-ui-themes (~> 0.0.4)
-    hobo_rapid (2.0.0)
-      hobo (= 2.0.0)
+    hobo_rapid (2.0.1)
+      hobo (= 2.0.1)
 
 GIT
   remote: https://github.com/pavlovich/hobo.git
-  revision: 20c2d4f9974bb429c725b357e559189d10be5454
+  revision: 530398d78b661caf80a73cdeedff977a7539872f
   specs:
-    dryml (2.0.0)
+    dryml (2.0.1)
       actionpack (~> 3.2.0)
-      hobo_support (= 2.0.0)
-    hobo (2.0.0)
-      dryml (= 2.0.0)
-      hobo_fields (= 2.0.0)
-      hobo_support (= 2.0.0)
+      hobo_support (= 2.0.1)
+    hobo (2.0.1)
+      dryml (= 2.0.1)
+      hobo_fields (= 2.0.1)
+      hobo_support (= 2.0.1)
       will_paginate (~> 3.0.0)
-    hobo_fields (2.0.0)
-      hobo_support (= 2.0.0)
-    hobo_support (2.0.0)
+    hobo_fields (2.0.1)
+      hobo_support (= 2.0.1)
+    hobo_support (2.0.1)
       rails (~> 3.2.0)
 
 GIT
   remote: https://github.com/pavlovich/hobo_bootstrap.git
-  revision: bb50d0f29836f3b461aa26200bb57b1f9283b5c7
+  revision: dc9810fbf602e146c236b86f8e97441595b37399
   specs:
-    hobo_bootstrap (2.0.0.pre8)
+    hobo_bootstrap (2.0.1)
       bootstrap-sass (~> 2.1)
       hobo (~> 2.0.0.pre6)
       hobo_jquery (~> 2.0.0.pre6)
@@ -102,10 +102,10 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bcrypt-ruby (3.0.1)
-    bootstrap-datepicker-rails (1.0.0.5)
+    bcrypt-ruby (3.1.1)
+    bootstrap-datepicker-rails (1.1.1.1)
       railties (>= 3.0)
-    bootstrap-sass (2.3.1.0)
+    bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.0.4)
     climate_control (0.0.3)
@@ -118,16 +118,16 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
+    coffee-script-source (1.6.3)
     daemons (1.1.9)
-    devise (2.2.3)
+    devise (3.0.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    excon (0.20.1)
+    excon (0.25.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fog (1.9.0)
@@ -142,32 +142,32 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     friendly_id (4.0.9)
-    fullcalendar-rails (1.5.4.0)
-    hike (1.2.2)
+    fullcalendar-rails (1.6.1.0)
+    hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.6.4)
     journey (1.0.4)
-    jquery-rails (2.2.1)
+    jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-themes (0.0.8)
+    jquery-ui-themes (0.0.11)
       httparty
-    json (1.7.7)
+    json (1.8.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.2)
-    multi_xml (0.5.3)
+    multi_json (1.7.7)
+    multi_xml (0.5.4)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
-    net-ssh (2.6.7)
-    nokogiri (1.5.9)
+    net-ssh (2.6.8)
+    nokogiri (1.5.10)
     orm_adapter (0.4.0)
-    paperclip (3.4.1)
+    paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -199,11 +199,11 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.0.4)
+    rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
     ruby-hmac (0.4.0)
-    sass (3.2.8)
+    sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -219,17 +219,17 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     thor (0.18.1)
-    tilt (1.3.7)
-    treetop (1.4.12)
+    tilt (1.4.1)
+    treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
-    uglifier (2.0.1)
+    uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.1)
+    warden (1.2.3)
       rack (>= 1.0)
-    will_paginate-bootstrap (0.2.2)
+    will_paginate-bootstrap (0.2.3)
       will_paginate (>= 3.0.3)
 
 PLATFORMS
