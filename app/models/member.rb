@@ -94,7 +94,7 @@ class Member < ActiveRecord::Base
   end
 
   def validate_current_password_when_changing_password
-    if(!acting_user.nil? && !acting_user.administrator?)
+    if(!acting_user.nil? && !(acting_user == :nobody) && !acting_user.administrator?)
       errors.add :current_password, I18n.t("hobo.messages.current_password_is_not_correct", :default => "is not correct") \
             if changing_password? && !authenticated?(current_password)
     end

@@ -82,10 +82,11 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="publicly_visible" param/>
     </content-header:>
 
     <content-body: param>
+      <field-list fields="text, link, start_date, end_date" param/>
     </content-body:>
 
   </page>
@@ -291,6 +292,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="data_file_name, data_content_type, data_file_size, data_updated_at" param/>
     </content-body:>
 
   </page>
@@ -392,7 +394,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="all_day" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="event.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -403,6 +405,7 @@
 
     <content-body: param>
       <view:description param="description" />
+      <field-list fields="starts_at, ends_at" param/>
     </content-body:>
 
   </page>
@@ -505,7 +508,7 @@
     </content-header:>
 
     <content-body: param>
-      <field-list fields="member" param/>
+      <field-list fields="bio, member" param/>
     </content-body:>
 
   </page>
@@ -604,7 +607,7 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="administrator" param/>
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="member.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -614,6 +617,7 @@
     </content-header:>
 
     <content-body: param>
+      <field-list fields="email_address, state" param/>
     </content-body:>
 
   </page>
@@ -775,10 +779,11 @@
         </ht>
       </h2>
 
-      <record-flags fields="" param/>
+      <record-flags fields="publicly_visible, slideshow" param/>
     </content-header:>
 
     <content-body: param>
+      <field-list fields="caption, tags, data_file_name, data_content_type, data_file_size, data_updated_at" param/>
     </content-body:>
 
   </page>
