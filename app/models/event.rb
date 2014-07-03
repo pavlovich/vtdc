@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   set_default_order "starts_at DESC"
 
   scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
+  scope :current, lambda {|end_time| {:conditions => ["ends at > ?", Event.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
 
   # need to override the json view to return what full_calendar is expecting.
