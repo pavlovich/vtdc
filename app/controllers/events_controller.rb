@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     # I'll eventually do that to make the demo a little cleaner.
     @events = Event.scoped
     @events = @events.order("starts_at")
+    @events = @events.after(Date.today - 1)
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
     @events = @events.paginate(:page => params[:page])
