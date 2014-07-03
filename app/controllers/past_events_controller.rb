@@ -2,12 +2,10 @@ class PastEventsController < ApplicationController
 
   hobo_model_controller
 
-  auto_actions [:index, :show]
-
   before_filter :login_required, :except => [ :index, :show ]
 
 
-  def hobo_index
+  def index
     # full_calendar will hit the index method with query parameters
     # 'start' and 'end' in order to filter the results for the
     # appropriate month/week/day.  It should be possiblt to change
@@ -28,7 +26,7 @@ class PastEventsController < ApplicationController
 
   # GET /events/1
   # GET /events/1.xml
-  def hobo_show
+  def show
     @event = Event.find(params[:id])
 
     respond_to do |format|
