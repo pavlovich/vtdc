@@ -1,4 +1,4 @@
-class PastEventsController
+class PastEventsController < ApplicationController
 
   hobo_model_controller
 
