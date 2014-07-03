@@ -71,7 +71,7 @@
 
 <extend tag="form" for="Photo">
    <old-form merge multipart>
-    <field-list: fields="caption, data"/>
+    <field-list: fields="name, caption, data"/>
    </old-form>
  </extend>
 

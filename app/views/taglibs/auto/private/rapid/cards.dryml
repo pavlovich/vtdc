@@ -12,6 +12,22 @@
   </card>
 </def>
 
+<def tag="card" for="Ckeditor::Asset">
+  <card class="ckeditor--asset" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Ckeditor::Picture">
+  <card class="ckeditor--picture" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="CustomPage">
   <card class="custom-page" param="default" merge>
     <header: param>

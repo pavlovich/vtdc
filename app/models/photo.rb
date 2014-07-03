@@ -2,6 +2,8 @@ class Photo < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
+  self.table_name = "ckeditor_assets"
+
   fields do
     data_file_name :string, :null => false
     data_content_type :string
@@ -18,6 +20,14 @@ class Photo < ActiveRecord::Base
     timestamps
   end
 
+  def name
+    @caption
+  end
+
+  def name= (something)
+    @caption=something
+  end
+
   has_attached_file :data,
                     :url  => "photos.totaldoberman.com",
                     :path => "ckeditor_assets/pictures/:id/:style_:basename.:extension",
@@ -26,24 +36,30 @@ class Photo < ActiveRecord::Base
                         :content => "300x300>",
                         :slide => "540x420" }
 
-  attr_accessible :caption, :data, :data_url
+  attr_accessible :caption, :data, :data_url, :assetable_type
+
+  #belongs_to :assetable, :polymorphic => true
 
   # --- Permissions --- #
 
   def create_permitted?
-    acting_user.administrator?
+    true
   end
 
   def update_permitted?
-    acting_user.administrator?
+    true
   end
 
   def destroy_permitted?
-    acting_user.administrator?
+    true
   end
 
   def view_permitted?(field)
     true
+  end
+
+  def attribute_protected?(attribute)
+    false
   end
 
 end
