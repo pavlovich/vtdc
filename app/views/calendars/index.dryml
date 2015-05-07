@@ -8,7 +8,7 @@
     </div>
     <script>
       $(document).ready(function() {
-      $('#calendar')[0].windowResize();
+      //$('#calendar')[0].windowResize();
       })
     </script>
   </content:>
