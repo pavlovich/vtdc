@@ -180,7 +180,8 @@ function setDefaults(d) {
  
 function Calendar(element, options, eventSources) {
 	var t = this;
-	
+
+    element[0].windowResize = windowResize;
 	
 	// exports
 	t.options = options;
@@ -1166,6 +1167,16 @@ function EventManager(options, _sources) {
 	
 	function normalizeEvent(event) {
 		var source = event.source || {};
+        if(event.starts_at){
+            event.start = event.starts_at;
+        }
+        if(event.ends_at){
+            event.end = event.ends_at;
+        }
+        if(typeof event.all_day == 'boolean'){
+            event.allDay = event.all_day;
+        }
+
 		var ignoreTimezone = firstDefined(source.ignoreTimezone, options.ignoreTimezone);
 		event._id = event._id || (event.id === undefined ? '_fc' + eventGUID++ : event.id + '');
 		if (event.date) {

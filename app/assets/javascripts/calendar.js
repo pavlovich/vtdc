@@ -6,7 +6,7 @@ $(document).ready(function() {
 	var y = date.getFullYear();
 	
 	$('#calendar').fullCalendar({
-		editable: true,        
+		editable: false,
 		header: {
             left: 'prev,next today',
             center: 'title',
